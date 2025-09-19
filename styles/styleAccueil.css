@@ -1,0 +1,89 @@
+:root {
+    --texte: #000000;
+    --fond: #ebf1ff;
+    --fond-menu: rgba(248, 248, 248, 0.95);
+    --liens: #ffbe82;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Georgia, serif;
+    font-size: 12px;
+    color: var(--texte);
+}
+
+/* Hero image plein écran */
+.hero {
+    height: 100vh;
+    background: url("../images/pexels-eberhardgross-640781.jpg") no-repeat center center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero h1 {
+    color: white;
+    font-size: 4rem;
+    text-align: center;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+    margin: 0;
+    font-family: Impact, sans-serif;
+}
+
+/* Header / menu normal */
+header {
+    background-color: var(--fond-menu);
+    width: 100%;
+    text-align: center;
+    padding: 15px 0;
+    transition: all 0.3s ease;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    color: var(--liens);
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Fixe le header quand on scroll */
+header.fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+/* Main */
+main {
+    padding: 20px;
+}
+
+/* Footer */
+footer {
+    background-color: var(--fond-menu);
+    text-align: center;
+    padding: 10px;
+    font-size: 12px;
+}

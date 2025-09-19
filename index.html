@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/styleAccueil.css">
+    <title>Portfolio - Yann Dogny</title>
+</head>
+<body>
+
+    <!-- Hero avec le h1 centré -->
+    <section class="hero">
+        <h1>Portfolio de Yann Dogny</h1>
+    </section>
+
+    <!-- Menu normal, juste après l'image -->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="pages/contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Contenu principal -->
+    <main>
+        <p>bonjour</p>
+        <p>bonjour</p>
+        <p>bonjour</p>
+        <p>bonjour</p>
+        <p>bonjour</p>
+        <p>bonjour</p>
+        <p>bonjour</p>
+        <p>bonjour</p>
+        <p>bonjour</p>
+    </main>
+
+    <footer>
+        &copy; 2025 - Portfolio de Yann Dogny
+    </footer>
+
+    <script>
+        const header = document.querySelector('header');
+        const hero = document.querySelector('.hero');
+        const headerOffsetTop = header.offsetTop;
+
+        window.addEventListener('scroll', () => {
+            // Quand on dépasse le top du header, on le fixe en haut
+            if (window.scrollY >= headerOffsetTop) {
+                header.classList.add('fixed');
+            } else {
+                header.classList.remove('fixed');
+            }
+        });
+    </script>
+
+</body>
+</html>
