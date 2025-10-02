@@ -1,8 +1,8 @@
 :root {
-    --texte: #f1f1f1ef;
+    --texte: #f1f1f1;
     --fond: #43376d;
-    --fond-menu: rgba(25, 11, 65, 0.95);
-    --liens: #3acacada;
+    --fond-menu: rgb(25, 11, 65);
+    --liens: #3acaca;
 }
 
 html, body {
@@ -18,6 +18,14 @@ body {
     background-color: var(--fond);
 }
 
+#header-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
 /* Header / menu normal */
 header {
     background-color: var(--fond-menu);
@@ -27,17 +35,9 @@ header {
     transition: all 0.3s ease;
 }
 
-/* Fixe le header quand on scroll */
-header.fixed {
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 1000;
-}
-
 /* Hero image plein écran */
 .hero {
-    height: 100vh;
+    height: 15vh;
     background: url("../images/fondEcran_Tech.png") no-repeat center center;
     background-size: cover;
     display: flex;
@@ -79,6 +79,7 @@ nav ul li a:hover {
 /* Main */
 main {
     padding: 20px;
+    margin-top: 20vh;
 }
 
 /* Footer */
