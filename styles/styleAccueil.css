@@ -54,6 +54,13 @@ header.fixed {
     font-family: Impact, sans-serif;
 }
 
+.logo-hero {
+    height: 80px;
+    width: 80px;
+    vertical-align: middle;
+    margin-right: 18px;
+}
+
 nav ul {
     list-style: none;
     padding: 0;
