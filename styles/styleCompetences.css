@@ -1,5 +1,5 @@
 :root {
-    --texte: #f1f1f1;
+    --texte: #e2e2e2;
     --fond: #43376d;
     --fond-menu: rgb(25, 11, 65);
     --liens: #3acaca;
@@ -98,15 +98,49 @@ main {
     box-shadow: 0 4px 24px rgba(0,0,0,0.15);
 }
 /* Sections du CV */
-.cv-section {
+.competences-section {
     margin-bottom: 32px;
-    padding: 24px 18px;
-    background: rgba(67,55,109,0.7);
-    border-radius: 12px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+    padding: 32px 28px 32px 28px;
+    background: linear-gradient(120deg, rgba(67,55,109,0.85) 80%, rgba(58,202,202,0.10) 100%);
+    border-radius: 18px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.13);
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    position: relative;
 }
 
-.cv-section h2 {
+.competence-bloc h2 {
+    font-size: 1.7rem;
+    color: var(--liens);
+    margin-bottom: 10px;
+    font-family: var(--h1-font);
+    letter-spacing: 1px;
+    text-align: left;
+}
+
+.competence-bloc h3 {
+    font-size: 1.15rem;
+    color: #e0e0e0;
+    margin-top: 18px;
+    margin-bottom: 6px;
+    font-family: var(--texte-font);
+    font-weight: bold;
+}
+
+.competence-bloc ul {
+    padding-left: 24px;
+    margin-bottom: 0;
+}
+
+.competence-bloc li {
+    margin-bottom: 4px;
+    line-height: 1.6;
+    font-size: 1.05rem;
+    font-family: var(--texte-font);
+}
+
+.competences-section h2 {
     color: var(--texte);
     font-size: 2rem;
     margin-bottom: 12px;
@@ -114,7 +148,7 @@ main {
     letter-spacing: 1px;
 }
 
-.cv-section h3 {
+.competences-section h3 {
     font-family: var(--texte-font);
     color: #e0e0e0;
     font-size: 1.2rem;
@@ -123,19 +157,19 @@ main {
     font-weight: bold;
 }
 
-.cv-section ul {
+.competences-section ul {
     padding-left: 20px;
     margin: 0;
 }
 
-.cv-section li {
+.competences-section li {
     margin-bottom: 6px;
     line-height: 1.6;
     font-size: 1.1rem;
     font-family: var(--texte-font);
 }
 
-.cv-section p {
+.competences-section p {
     font-size: 1.15rem;
     margin-bottom: 10px;
     color: #f3f3f3;
@@ -148,4 +182,33 @@ footer {
     text-align: center;
     padding: 10px;
     font-size: 12px;
+}
+
+/* Boutons menu compétences */
+.btn-active {
+    background: var(--liens);
+    color: #222;
+    border: none;
+    font-weight: bold;
+    padding: 8px 22px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+    margin: 0 8px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+button:not(.btn-active) {
+    background: #2a2250;
+    color: var(--texte);
+    border: 1px solid var(--liens);
+    font-weight: normal;
+    padding: 8px 22px;
+    border-radius: 8px;
+    margin: 0 8px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+button:not(.btn-active):hover {
+    background: var(--liens);
+    color: #222;
 }

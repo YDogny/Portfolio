@@ -1,5 +1,5 @@
 :root {
-    --texte: #f1f1f1ef;
+    --texte: #e2e2e2;
     --fond: #43376d;
     --fond-menu: rgba(25, 11, 65, 0.95);
     --liens: #3acacada;
@@ -85,7 +85,19 @@ nav ul li a:hover {
 
 /* Main */
 main {
-    padding: 20px;
+    padding: 40px 20px 40px 20px;
+    margin-top: 2vh;
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 2vh;
+    background: rgba(255,255,255,0.05);
+    border-radius: 18px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.15);
+}
+
+main section {
+    margin:20px;
 }
 
 /* Footer */
