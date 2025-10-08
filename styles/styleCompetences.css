@@ -147,23 +147,6 @@ main {
     font-size: 1.1rem;
     font-family: var(--texte-font);
 }
-
-.competences-section h2 {
-    /* doublon supprimé, voir plus haut */
-}
-
-.competences-section h3 {
-    /* doublon supprimé, voir plus haut */
-}
-
-.competences-section ul {
-    /* doublon supprimé, voir plus haut */
-}
-
-.competences-section li {
-    /* doublon supprimé, voir plus haut */
-}
-
 .competences-section p {
     font-size: 1.15rem;
     margin-bottom: 10px;
