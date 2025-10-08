@@ -1,8 +1,9 @@
 :root {
-    --texte: #e2e2e2;
-    --fond: #43376d;
-    --fond-menu: rgb(25, 11, 65);
-    --liens: #3acaca;
+    --texte: #f6f8fa;
+    --fond: #6291e9;
+    --fond-menu: #163697;
+    --section-bg: #6291e9;
+    --h2-color: #1e48c5;
     --h1-font: 'Lobster', cursive;
     --texte-font: Arial, sans-serif;
 }
@@ -11,14 +12,18 @@ html, body {
     height: 100%;
     margin: 0;
     padding: 0;
-@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Oswald:wght@700&display=swap');
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Oswald:wght@700&display=swap');
+
 body {
-    font-family: Georgia, serif;
-    font-size: 12px;
+    font-family: var(--texte-font);
+    font-size: 15px;
     color: var(--texte);
     background-color: var(--fond);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 #header-container {
@@ -41,11 +46,12 @@ header {
 /* Hero image plein écran */
 .hero {
     height: 15vh;
-    background: url("../images/fondEcran_Tech.png") no-repeat center center;
+    background: url("../images/fond.jpg") no-repeat center center;
     background-size: cover;
     display: flex;
     justify-content: center;
     align-items: center;
+    box-shadow: 0 4px 24px rgba(30,44,84,0.18);
 }
 
 .hero h1 {
@@ -77,8 +83,8 @@ nav ul li {
 nav ul li a {
     font-family: Arial, sans-serif;
     font-size: 16px;
-    color: var(--liens);
-    text-decoration: none;
+    color: var(--texte);
+    text-decoration: underline;
 }
 
 nav ul li a:hover {
@@ -93,17 +99,18 @@ main {
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 2vh;
-    background: rgba(255,255,255,0.05);
     border-radius: 18px;
+    background-color: #9acdffd0;
     box-shadow: 0 4px 24px rgba(0,0,0,0.15);
+    flex: 1;
 }
 /* Sections du CV */
 .competences-section {
     margin-bottom: 32px;
-    padding: 32px 28px 32px 28px;
-    background: linear-gradient(120deg, rgba(67,55,109,0.85) 80%, rgba(58,202,202,0.10) 100%);
-    border-radius: 18px;
-    box-shadow: 0 4px 24px rgba(0,0,0,0.13);
+    padding: 24px 18px;
+    background: var(--section-bg);
+    border-radius: 14px;
+    box-shadow: 8px 7px 22px rgba(0, 0, 0, 0.26);
     display: flex;
     flex-direction: column;
     gap: 18px;
@@ -111,68 +118,56 @@ main {
 }
 
 .competence-bloc h2 {
-    font-size: 1.7rem;
-    color: var(--liens);
-    margin-bottom: 10px;
+    font-size: 2.3rem;
+    color: var(--h2-color);
+    margin-bottom: 18px;
     font-family: var(--h1-font);
-    letter-spacing: 1px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
     text-align: left;
 }
 
 .competence-bloc h3 {
-    font-size: 1.15rem;
+    font-size: 1.2rem;
     color: #e0e0e0;
     margin-top: 18px;
-    margin-bottom: 6px;
+    margin-bottom: 8px;
     font-family: var(--texte-font);
     font-weight: bold;
 }
 
 .competence-bloc ul {
-    padding-left: 24px;
+    padding-left: 20px;
     margin-bottom: 0;
 }
 
 .competence-bloc li {
-    margin-bottom: 4px;
-    line-height: 1.6;
-    font-size: 1.05rem;
-    font-family: var(--texte-font);
-}
-
-.competences-section h2 {
-    color: var(--texte);
-    font-size: 2rem;
-    margin-bottom: 12px;
-    font-family: var(--h1-font);
-    letter-spacing: 1px;
-}
-
-.competences-section h3 {
-    font-family: var(--texte-font);
-    color: #e0e0e0;
-    font-size: 1.2rem;
-    margin-top: 18px;
-    margin-bottom: 8px;
-    font-weight: bold;
-}
-
-.competences-section ul {
-    padding-left: 20px;
-    margin: 0;
-}
-
-.competences-section li {
     margin-bottom: 6px;
     line-height: 1.6;
     font-size: 1.1rem;
     font-family: var(--texte-font);
 }
 
+.competences-section h2 {
+    /* doublon supprimé, voir plus haut */
+}
+
+.competences-section h3 {
+    /* doublon supprimé, voir plus haut */
+}
+
+.competences-section ul {
+    /* doublon supprimé, voir plus haut */
+}
+
+.competences-section li {
+    /* doublon supprimé, voir plus haut */
+}
+
 .competences-section p {
     font-size: 1.15rem;
     margin-bottom: 10px;
-    color: #f3f3f3;
+    color: var(--h2-color);
     font-family: var(--texte-font);
 }
 
@@ -182,12 +177,14 @@ footer {
     text-align: center;
     padding: 10px;
     font-size: 12px;
+    color: var(--texte);
+    margin-top: auto;
 }
 
 /* Boutons menu compétences */
 .btn-active {
-    background: var(--liens);
-    color: #222;
+    background: var(--h2-color);
+    color: #fff;
     border: none;
     font-weight: bold;
     padding: 8px 22px;
@@ -198,9 +195,9 @@ footer {
     transition: background 0.2s;
 }
 button:not(.btn-active) {
-    background: #2a2250;
+    background: #163697;
     color: var(--texte);
-    border: 1px solid var(--liens);
+    border: 1px solid var(--h2-color);
     font-weight: normal;
     padding: 8px 22px;
     border-radius: 8px;
@@ -209,6 +206,6 @@ button:not(.btn-active) {
     transition: background 0.2s;
 }
 button:not(.btn-active):hover {
-    background: var(--liens);
-    color: #222;
+    background: var(--h2-color);
+    color: #fff;
 }

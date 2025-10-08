@@ -1,8 +1,10 @@
 :root {
-    --texte: #e2e2e2;
-    --fond: #43376d;
-    --fond-menu: rgba(25, 11, 65, 0.95);
-    --liens: #3acacada;
+    --texte: #f6f8fa;
+    --fond: #6291e9;
+    --fond-menu: #163697;
+    --h2-color: #1e48c5;
+    --h1-font: 'Lobster', cursive;
+    --texte-font: Arial, sans-serif;
 }
 
 html, body {
@@ -11,9 +13,11 @@ html, body {
     padding: 0;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Oswald:wght@700&display=swap');
+
 body {
-    font-family: Georgia, serif;
-    font-size: 12px;
+    font-family: var(--texte-font);
+    font-size: 15px;
     color: var(--texte);
     background-color: var(--fond);
 }
@@ -32,25 +36,26 @@ header.fixed {
     position: fixed;
     top: 0;
     left: 0;
+    width: 100%;
     z-index: 1000;
 }
 
 /* Hero image plein écran */
 .hero {
     height: 100vh;
-    background: url("../images/fondEcran_Tech.png") no-repeat center center;
+    background: url("../images/fond.jpg") no-repeat center center;
     background-size: cover;
     display: flex;
     justify-content: center;
     align-items: center;
+    box-shadow: 0 4px 24px rgba(30,44,84,0.18);
 }
 
 .hero h1 {
     color: var(--texte);
     font-size: 4rem;
-    text-align: center;
-    text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
-    margin: 0;
+    margin-bottom: 12px;
+    letter-spacing: 1px;
     font-family: Impact, sans-serif;
 }
 
@@ -75,8 +80,8 @@ nav ul li {
 nav ul li a {
     font-family: Arial, sans-serif;
     font-size: 16px;
-    color: var(--liens);
-    text-decoration: none;
+    color: var(--texte);
+    text-decoration: underline;
 }
 
 nav ul li a:hover {
@@ -87,17 +92,17 @@ nav ul li a:hover {
 main {
     padding: 40px 20px 40px 20px;
     margin-top: 2vh;
-    max-width: 1400px;
+    max-width: 1100px;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 2vh;
-    background: rgba(255,255,255,0.05);
     border-radius: 18px;
+    background-color: #9acdffd0;
     box-shadow: 0 4px 24px rgba(0,0,0,0.15);
 }
 
 main section {
-    margin:20px;
+    margin: 20px;
 }
 
 /* Footer */
@@ -106,4 +111,5 @@ footer {
     text-align: center;
     padding: 10px;
     font-size: 12px;
+    color: var(--texte);
 }
