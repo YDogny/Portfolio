@@ -1,9 +1,6 @@
 :root {
     --texte: #f6f8fa;
-    --fond: #6291e9;
     --fond-menu: #163697;
-    --h2-color: #1e48c5;
-    --h1-font: 'Lobster', cursive;
     --texte-font: Arial, sans-serif;
 }
 
@@ -11,61 +8,28 @@ html, body {
     height: 100%;
     margin: 0;
     padding: 0;
-}
-
-@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Oswald:wght@700&display=swap');
-
-body {
     font-family: var(--texte-font);
     font-size: 15px;
     color: var(--texte);
-    background-color: var(--fond);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
-/* Header / menu normal */
+/* Header fixé en haut */
 header {
     background-color: var(--fond-menu);
     width: 100%;
     text-align: center;
     padding: 15px 0;
-    transition: all 0.3s ease;
-}
-
-/* Fixe le header quand on scroll */
-header.fixed {
+    flex-shrink: 0;
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
     z-index: 1000;
 }
 
-/* Hero image plein écran */
-.hero {
-    height: 100vh;
-    background: url("../images/fond.jpg") no-repeat center center;
-    background-size: cover;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 0 4px 24px rgba(30,44,84,0.18);
-}
-
-.hero h1 {
-    color: var(--texte);
-    font-size: 4rem;
-    margin-bottom: 12px;
-    letter-spacing: 1px;
-    font-family: Impact, sans-serif;
-}
-
-.logo-hero {
-    height: 80px;
-    width: 80px;
-    vertical-align: middle;
-    margin-right: 18px;
-}
-
+/* Navigation */
 nav ul {
     list-style: none;
     padding: 0;
@@ -78,7 +42,6 @@ nav ul li {
 }
 
 nav ul li a {
-    font-family: Arial, sans-serif;
     font-size: 16px;
     color: var(--texte);
     text-decoration: underline;
@@ -88,28 +51,56 @@ nav ul li a:hover {
     text-decoration: underline;
 }
 
-/* Main */
-main {
-    padding: 40px 20px 40px 20px;
-    margin-top: 2vh;
-    max-width: 1100px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 2vh;
-    border-radius: 18px;
-    background-color: #9acdffd0;
-    box-shadow: 0 4px 24px rgba(0,0,0,0.15);
-}
-
-main section {
-    margin: 20px;
-}
-
-/* Footer */
+/* Footer fixé en bas */
 footer {
     background-color: var(--fond-menu);
     text-align: center;
     padding: 10px;
     font-size: 12px;
     color: var(--texte);
+    flex-shrink: 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Section Hero avec image de fond */
+.hero {
+    background: url("../images/fond.jpg") no-repeat center center;
+    background-size: cover;
+    flex-grow: 1;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 24px rgba(30,44,84,0.18);
+    text-align: center;
+    padding-bottom: 40px;
+}
+
+/* Titre principal */
+.hero h1 {
+    color: var(--texte);
+    font-size: 5rem;
+    margin: 0 0 10px 0;
+    letter-spacing: 1px;
+    font-family: Impact, sans-serif;
+}
+
+/* Logo dans le h1 */
+.logo-hero {
+    height: 100px;
+    width: 100px;
+    vertical-align: middle;
+    margin-right: 18px;
+}
+
+/* Texte de présentation */
+.presentation-text {
+    color: var(--texte);
+    font-size: 1.4rem;
+    max-width: 700px;
+    line-height: 1.5;
+    margin: 0 20px;
 }

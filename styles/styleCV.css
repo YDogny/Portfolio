@@ -4,7 +4,7 @@
     --fond-menu: #163697;
     --section-bg: #6291e9;
     --h2-color: #1e48c5;
-    --h1-font: 'Lobster', cursive;
+    --h1-font: 'Georgia', serif;
     --texte-font: Arial, sans-serif;
 }
 
@@ -13,8 +13,6 @@ html, body {
     margin: 0;
     padding: 0;
 }
-
-@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Oswald:wght@700&display=swap');
 
 body {
     font-family: var(--texte-font);
@@ -206,13 +204,47 @@ main {
 }
 
 .competences-grid {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 32px;
-    flex-wrap: wrap;
+    margin-top: 18px;
 }
-.competences-grid > div {
-    flex: 1 1 320px;
-    min-width: 280px;
+
+.competence-card {
+    background: #f6f8fa;
+    border-radius: 16px;
+    box-shadow: 0 4px 18px rgba(30,44,84,0.13);
+    padding: 24px 18px 18px 18px;
+    margin-bottom: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 220px;
+    transition: transform 0.15s;
+}
+.competence-card:hover {
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 8px 32px rgba(30,44,84,0.18);
+}
+.competence-card h3 {
+    color: #1e48c5;
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+    font-family: var(--h1-font);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-align: left;
+    margin-top: 0;
+}
+.competence-card ul {
+    padding-left: 18px;
+    margin-bottom: 0;
+}
+.competence-card li {
+    color: #1a2340;
+    font-size: 1.08rem;
+    margin-bottom: 6px;
+    line-height: 1.6;
+    font-family: var(--texte-font);
 }
 
 .langues-section {

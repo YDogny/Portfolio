@@ -4,7 +4,7 @@
     --fond-menu: #163697;
     --section-bg: #6291e9;
     --h2-color: #1e48c5;
-    --h1-font: 'Lobster', cursive;
+    --h1-font: 'Georgia', serif;
     --texte-font: Arial, sans-serif;
 }
 
@@ -13,8 +13,6 @@ html, body {
     margin: 0;
     padding: 0;
 }
-
-@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Oswald:wght@700&display=swap');
 
 body {
     font-family: var(--texte-font);
@@ -95,7 +93,7 @@ nav ul li a:hover {
 main {
     padding: 40px 20px 40px 20px;
     margin-top: 22vh;
-    max-width: 1100px;
+    max-width: 1400px;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 2vh;
@@ -104,21 +102,15 @@ main {
     box-shadow: 0 4px 24px rgba(0,0,0,0.15);
     flex: 1;
 }
-/* Sections du CV */
-.competences-section {
-    margin-bottom: 32px;
-    padding: 24px 18px;
-    background: var(--section-bg);
-    border-radius: 14px;
-    box-shadow: 8px 7px 22px rgba(0, 0, 0, 0.26);
-    display: flex;
-    flex-direction: column;
-    gap: 18px;
-    position: relative;
+
+main ul li {
+    color: #2d3655;
 }
 
+
+
 .competence-bloc h2 {
-    font-size: 2.3rem;
+    font-size: 2rem;
     color: var(--h2-color);
     margin-bottom: 18px;
     font-family: var(--h1-font);
@@ -129,16 +121,18 @@ main {
 
 .competence-bloc h3 {
     font-size: 1.2rem;
-    color: #e0e0e0;
+    color: #001c46;
     margin-top: 18px;
     margin-bottom: 8px;
     font-family: var(--texte-font);
     font-weight: bold;
+    padding-left: 50px;
 }
 
 .competence-bloc ul {
-    padding-left: 20px;
-    margin-bottom: 0;
+    margin-top: 10px;
+    padding-left: 100px;
+    margin-bottom: 5px;
 }
 
 .competence-bloc li {
