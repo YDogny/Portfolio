@@ -1,9 +1,14 @@
+/* Variables de couleurs et de polices */
 :root {
     --texte: #f6f8fa;
     --fond-menu: #163697;
     --texte-font: Arial, sans-serif;
+    --menu-sous-fond: #2142a5; /* Fond du sous-menu */
+    --menu-sous-texte-hover: #000; /* Couleur texte hover sous-menu */
+    --flèche-couleur: #f6f8fa; /* Couleur de la flèche */
 }
 
+/* Style de base pour le corps et la page */
 html, body {
     height: 100%;
     margin: 0;
@@ -34,21 +39,86 @@ nav ul {
     list-style: none;
     padding: 0;
     margin: 0;
+    display: flex;
+    justify-content: center;
 }
 
 nav ul li {
-    display: inline;
-    margin: 0 15px;
+    position: relative;
+    margin-right: 20px;
 }
 
+/* Style des liens de menu */
 nav ul li a {
-    font-size: 16px;
+    text-decoration: none;
     color: var(--texte);
-    text-decoration: underline;
+    font-weight: bold;
+    padding: 10px;
+    display: block;
+    position: relative;
 }
 
+/* Effet au survol du menu principal */
 nav ul li a:hover {
-    text-decoration: underline;
+    color: #fff;
+    background-color: var(--fond-menu);
+}
+
+/* Flèche de type "Swipe Up" */
+nav ul li.menu-item-has-children .arrow {
+    content: "";
+    width: 10px;
+    height: 10px;
+    border-left: 2px solid var(--flèche-couleur);
+    border-bottom: 2px solid var(--flèche-couleur);
+    position: absolute;
+    right: -24px; /* Positionnement à droite du texte */
+    top: 50%;
+    transform: translateY(-50%) rotate(-45deg); /* Flèche pointant vers le bas au départ */
+    transition: transform 0.3s ease;
+    margin-right: 10px; /* Ajout d'un espace de 5px à droite de la flèche */
+}
+
+/* Lorsque le menu est ouvert, on fait tourner la flèche pour qu'elle pointe vers le haut */
+nav ul li.menu-item-has-children.open .arrow {
+    transform: translateY(-50%) rotate(135deg); /* Flèche pointe vers le haut */
+}
+
+/* Apparence du sous-menu (masqué par défaut) */
+nav ul li .sub-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: var(--menu-sous-fond);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    padding: 10px 0;
+    list-style-type: none;
+    margin: 0;
+    width: 220px;
+    border-radius: 4px; /* Coins arrondis pour un meilleur design */
+    opacity: 0; /* Initialement invisible */
+    transition: opacity 0.3s ease; /* Animation pour un déploiement fluide */
+}
+
+/* Afficher le sous-menu lorsque le parent est ouvert (via la classe "open") */
+nav ul li.open .sub-menu {
+    display: block;
+    opacity: 1;
+}
+
+/* Style des éléments du sous-menu */
+nav ul li .sub-menu li a {
+    padding: 8px 20px;
+    font-weight: normal;
+    color: var(--texte);
+    display: block;
+}
+
+/* Effet de survol du sous-menu */
+nav ul li .sub-menu li a:hover {
+    background-color: #f0f0f0;
+    color: var(--menu-sous-texte-hover);
 }
 
 /* Footer fixé en bas */
