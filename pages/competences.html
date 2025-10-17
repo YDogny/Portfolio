@@ -9,34 +9,56 @@
 </head>
 <body>
 
+    <!-- =================== HEADER =================== -->
     <div id="header-container">
-        <!-- Hero avec le h1 centré -->
+
+        <!-- Section Héros -->
         <section class="hero">
             <h1><img src="../images/Logo_YD.png" alt="Logo" class="logo-hero">Portfolio de Yann Dogny</h1>
         </section>
 
-        <!-- Menu normal, juste après l'image -->
+        <!-- MENU NAVIGATION -->
         <header>
             <nav>
                 <ul>
                     <li><a href="../index.html">Accueil</a></li>
                     <li><a href="cv.html">CV</a></li>
                     <li><a href="competences.html">Compétences</a></li>
+                    <li><a href="projets.html">Projets</span></a></li>
+                    <li class="menu-item-has-children">
+                        <a href="stages.html">Stages</a>
+                        <span class="arrow"></span>
+                        <ul class="sub-menu">
+                            <li><a href="stage1.html">Campus Connecté</a></li>
+                            <li><a href="stage2.html">Stage 2</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item-has-children">
+                        <a href="#">Veille <span class="arrow"></span></a>
+                        <ul class="sub-menu">
+                            <li><a href="veille1.html">Veille 1ère année</a></li>
+                            <li><a href="veille2.html">Veille 2ème année</a></li>
+                        </ul>
+                    </li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
             </nav>
         </header>
     </div>
 
-    <!-- Contenu principal -->
+    <!-- =================== CONTENU PRINCIPAL =================== -->
     <main>
+
         <div id="competences-menu" style="text-align:center; margin-bottom:24px;">
             <button onclick="showBloc(1)" id="btn-bloc-1" class="btn-active">1. Support & Services</button>
             <button onclick="showBloc(2)" id="btn-bloc-2">2. Développement</button>
             <button onclick="showBloc(3)" id="btn-bloc-3">3. Cybersécurité</button>
         </div>
+
+        <!-- BLOC 1 -->
         <div id="bloc-1" class="competence-bloc">
             <h2>1. Support et mise à disposition de services informatiques</h2>
+
             <h3>1.1 Gestion du patrimoine informatique</h3>
             <ul>
                 <li>Recenser et identifier les ressources numériques</li>
@@ -45,34 +67,42 @@
                 <li>Gérer les sauvegardes</li>
                 <li>Vérifier le respect des règles d’utilisation</li>
             </ul>
+
             <h3>1.2 Réponse aux incidents et demandes d’assistance</h3>
             <ul>
                 <li>Collecter, suivre et orienter les demandes</li>
                 <li>Traiter les demandes réseau, système, applicatifs</li>
             </ul>
+
             <h3>1.3 Développement de la présence en ligne</h3>
             <ul>
                 <li>Valoriser l’image de l’organisation</li>
                 <li>Référencer et mesurer la visibilité des services</li>
             </ul>
+
             <h3>1.4 Travail en mode projet</h3>
             <ul>
                 <li>Analyser les objectifs et modalités</li>
                 <li>Planifier les activités</li>
             </ul>
+
             <h3>1.5 Mise à disposition des utilisateurs</h3>
             <ul>
                 <li>Réaliser les tests d’intégration et d’acceptation</li>
                 <li>Déployer un service</li>
             </ul>
+
             <h3>1.6 Organisation de son développement professionnel</h3>
             <ul>
                 <li>Mettre en place son environnement d’apprentissage</li>
                 <li>Développer son projet professionnel</li>
             </ul>
         </div>
+
+        <!-- BLOC 2 -->
         <div id="bloc-2" class="competence-bloc" style="display:none;">
             <h2>2. Conception et développement d’applications</h2>
+
             <h3>2.1 Conception et développement d’une solution applicative</h3>
             <ul>
                 <li>Analyser un besoin et son contexte</li>
@@ -81,59 +111,90 @@
                 <li>Utiliser des composants d’accès aux données</li>
                 <li>Réaliser les tests et la validation</li>
             </ul>
+
             <h3>2.2 Maintenance corrective ou évolutive</h3>
             <ul>
                 <li>Recueillir, analyser et mettre à jour les informations</li>
                 <li>Évaluer la qualité d’une solution</li>
                 <li>Mettre à jour la documentation technique</li>
             </ul>
+
             <h3>2.3 Gestion des données</h3>
             <ul>
                 <li>Exploiter des données à l’aide d’un langage de requêtes</li>
                 <li>Développer des fonctionnalités dans un SGBD</li>
             </ul>
         </div>
+
+        <!-- BLOC 3 -->
         <div id="bloc-3" class="competence-bloc" style="display:none;">
             <h2>3. Cybersécurité des services informatiques</h2>
+
             <h3>3.1 Protection des données à caractère personnel</h3>
             <ul>
                 <li>Recenser les traitements sur les données</li>
                 <li>Identifier les risques liés à la collecte et au stockage</li>
                 <li>Appliquer la réglementation</li>
             </ul>
+
             <h3>3.2 Préservation de l’identité numérique</h3>
             <ul>
                 <li>Protéger l’identité numérique</li>
                 <li>Déployer les moyens de preuve électronique</li>
             </ul>
+
             <h3>3.3 Sécurisation des équipements et usages</h3>
             <ul>
                 <li>Informer les utilisateurs sur les risques</li>
                 <li>Gérer les accès et privilèges</li>
             </ul>
+
             <h3>3.4 Garantie de la disponibilité, intégrité et confidentialité</h3>
             <ul>
                 <li>Caractériser les risques liés à l’utilisation malveillante</li>
                 <li>Recenser les conséquences d’une perte de disponibilité</li>
             </ul>
+
             <h3>3.5 Cyber sécurisation d’une solution applicative</h3>
             <ul>
                 <li>Participer à la vérification des éléments de sécurité</li>
                 <li>Mettre en œuvre et vérifier la conformité d’une solution</li>
             </ul>
         </div>
-        <script>
-            function showBloc(num) {
-                for (let i = 1; i <= 3; i++) {
-                    document.getElementById('bloc-' + i).style.display = (i === num) ? 'block' : 'none';
-                    document.getElementById('btn-bloc-' + i).classList.toggle('btn-active', i === num);
-                }
-            }
-        </script>
+
     </main>
 
+    <!-- =================== FOOTER =================== -->
     <footer>
         &copy; 2025 - Portfolio de Yann Dogny
     </footer>
+
+    <!-- =================== SCRIPTS =================== -->
+    <script>
+        // Gestion des blocs de compétences
+        function showBloc(num) {
+            for (let i = 1; i <= 3; i++) {
+                document.getElementById('bloc-' + i).style.display = (i === num) ? 'block' : 'none';
+                document.getElementById('btn-bloc-' + i).classList.toggle('btn-active', i === num);
+            }
+        }
+
+        // Menu déroulant avec flèche
+        document.addEventListener("DOMContentLoaded", function() {
+            const menuItems = document.querySelectorAll("nav ul li.menu-item-has-children");
+            menuItems.forEach(item => {
+                const arrow = item.querySelector(".arrow");
+                if (arrow) {
+                    arrow.addEventListener("click", e => {
+                        e.stopPropagation();
+                        item.classList.toggle("open");
+                        menuItems.forEach(other => {
+                            if (other !== item) other.classList.remove("open");
+                        });
+                    });
+                }
+            });
+        });
+    </script>
 </body>
 </html>

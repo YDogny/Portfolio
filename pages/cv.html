@@ -22,6 +22,22 @@
                     <li><a href="../index.html">Accueil</a></li>
                     <li><a href="cv.html">CV</a></li>
                     <li><a href="competences.html">Compétences</a></li>
+                    <li><a href="projets.html">Projets</span></a></li>
+                    <li class="menu-item-has-children">
+                        <a href="stages.html">Stages</a>
+                        <span class="arrow"></span>
+                        <ul class="sub-menu">
+                            <li><a href="stage1.html">Campus Connecté</a></li>
+                            <li><a href="stage2.html">Stage 2</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item-has-children">
+                        <a href="#">Veille <span class="arrow"></span></a>
+                        <ul class="sub-menu">
+                            <li><a href="veille1.html">Veille 1ère année</a></li>
+                            <li><a href="veille2.html">Veille 2ème année</a></li>
+                        </ul>
+                    </li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
             </nav>
@@ -153,5 +169,30 @@
     <footer>
         &copy; 2025 - Portfolio de Yann Dogny
     </footer>
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        // Gestion des sous-menus
+        const menuItems = document.querySelectorAll("nav ul li.menu-item-has-children");
+        menuItems.forEach(function(item) {
+            const arrow = item.querySelector(".arrow");
+            if (arrow) {
+                arrow.addEventListener("click", function(e) {
+                    e.stopPropagation();
+                    item.classList.toggle("open");
+                    menuItems.forEach(other => {
+                        if (other !== item) other.classList.remove("open");
+                    });
+                });
+            }
+        });
+
+        // Gestion des compétences repliables
+        document.querySelectorAll('.competence-card h3').forEach(title => {
+            title.addEventListener('click', () => {
+                title.parentElement.classList.toggle('active');
+            });
+        });
+    });
+    </script>
 </body>
 </html>

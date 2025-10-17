@@ -136,7 +136,8 @@ footer {
 
 /* Section Hero avec image de fond */
 .hero {
-    background: url("../images/fond.jpg") no-repeat center center;
+    background: linear-gradient(#081b575b),
+                url("../images/fond.jpg") no-repeat center center;
     background-size: cover;
     flex-grow: 1;
     margin: 0;
@@ -174,3 +175,4 @@ footer {
     line-height: 1.5;
     margin: 0 20px;
 }
+

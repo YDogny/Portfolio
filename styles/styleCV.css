@@ -29,7 +29,7 @@ body {
     z-index: 1000;
 }
 
-/* Header / menu normal */
+/* ======================= HEADER / NAVIGATION ======================= */
 header {
     background-color: var(--fond-menu);
     width: 100%;
@@ -38,7 +38,7 @@ header {
     transition: all 0.3s ease;
 }
 
-/* Hero image plein écran */
+/* Hero */
 .hero {
     height: 15vh;
     background: url("../images/fond.jpg") no-repeat center center;
@@ -64,14 +64,17 @@ header {
     margin-right: 18px;
 }
 
+/* ======== MENU DÉROULANT AVEC FLÈCHES ======== */
 nav ul {
     list-style: none;
     padding: 0;
     margin: 0;
+    display: flex;
+    justify-content: center;
 }
 
 nav ul li {
-    display: inline;
+    position: relative;
     margin: 0 15px;
 }
 
@@ -79,17 +82,74 @@ nav ul li a {
     font-family: Arial, sans-serif;
     font-size: 16px;
     color: var(--texte);
-    text-decoration: underline;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px;
+    display: block;
+    transition: color 0.3s;
 }
 
 nav ul li a:hover {
-    text-decoration: underline;
+    color: #dcdcdc;
 }
 
-/* Main */
+/* Flèche à côté des menus déroulants */
+nav ul li.menu-item-has-children .arrow {
+    content: "";
+    width: 8px;
+    height: 8px;
+    border-left: 2px solid white;
+    border-bottom: 2px solid white;
+    position: absolute;
+    right: -12px;
+    top: 50%;
+    transform: translateY(-50%) rotate(-45deg);
+    transition: transform 0.3s ease;
+}
+
+/* Flèche orientée vers le haut quand ouvert */
+nav ul li.menu-item-has-children.open .arrow {
+    transform: translateY(-50%) rotate(135deg);
+}
+
+/* Sous-menu */
+nav ul li .sub-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #1b3ba0;
+    list-style-type: none;
+    margin: 0;
+    padding: 10px 0;
+    border-radius: 4px;
+    width: 200px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    z-index: 999;
+}
+
+nav ul li.open .sub-menu {
+    display: block;
+    opacity: 1;
+}
+
+nav ul li .sub-menu li a {
+    padding: 8px 20px;
+    color: white;
+    display: block;
+}
+
+nav ul li .sub-menu li a:hover {
+    background-color: #f0f0f0;
+    color: black;
+}
+
+/* ======================= CONTENU PRINCIPAL ======================= */
 main {
     padding: 40px 20px 40px 20px;
-    margin-top: 22vh;
+    margin-top: 24vh;
     max-width: 1100px;
     margin-left: auto;
     margin-right: auto;
@@ -98,7 +158,8 @@ main {
     background-color: #9acdffd0;
     box-shadow: 0 4px 24px rgba(0,0,0,0.15);
 }
-/* Sections du CV */
+
+/* ======================= SECTIONS DU CV ======================= */
 .cv-section {
     margin-bottom: 32px;
     padding: 24px 18px;
@@ -159,6 +220,7 @@ main {
     font-family: var(--texte-font);
 }
 
+/* ======================= À PROPOS ======================= */
 .about-section {
     display: flex;
     flex-direction: column;
@@ -203,42 +265,68 @@ main {
     margin: 0 10px 10px 0;
 }
 
+/* ======================= COMPÉTENCES REPLIABLES ======================= */
 .competences-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 32px;
-    margin-top: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
 }
 
 .competence-card {
     background: #f6f8fa;
     border-radius: 16px;
     box-shadow: 0 4px 18px rgba(30,44,84,0.13);
-    padding: 24px 18px 18px 18px;
+    padding: 18px 18px 14px 18px;
     margin-bottom: 0;
-    display: flex;
-    flex-direction: column;
-    min-height: 220px;
     transition: transform 0.15s;
 }
+
 .competence-card:hover {
-    transform: translateY(-4px) scale(1.02);
-    box-shadow: 0 8px 32px rgba(30,44,84,0.18);
+    transform: translateY(-3px);
 }
+
+/* Titre avec flèche */
 .competence-card h3 {
     color: #1e48c5;
     font-size: 1.25rem;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
     font-family: var(--h1-font);
     letter-spacing: 1px;
     text-transform: uppercase;
     text-align: left;
     margin-top: 0;
+    cursor: pointer;
+    position: relative;
 }
+
+.competence-card h3::after {
+    content: "▼";
+    position: absolute;
+    right: 0;
+    top: 0;
+    font-size: 1rem;
+    transition: transform 0.3s;
+}
+
+.competence-card.active h3::after {
+    transform: rotate(-180deg);
+}
+
+/* Liste masquée par défaut */
 .competence-card ul {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: all 0.4s ease-in-out;
     padding-left: 18px;
     margin-bottom: 0;
 }
+
+.competence-card.active ul {
+    max-height: 500px;
+    opacity: 1;
+}
+
 .competence-card li {
     color: #1a2340;
     font-size: 1.08rem;
@@ -247,6 +335,7 @@ main {
     font-family: var(--texte-font);
 }
 
+/* ======================= LANGUES ======================= */
 .langues-section {
     background: rgba(76,195,247,0.10);
     border-radius: 10px;
@@ -263,7 +352,7 @@ main {
     margin-bottom: 8px;
 }
 
-/* Footer */
+/* ======================= FOOTER ======================= */
 footer {
     background-color: var(--fond-menu);
     text-align: center;
