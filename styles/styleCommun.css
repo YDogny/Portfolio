@@ -4,6 +4,7 @@
     --fond-menu: #163697;
     --section-bg: #6291e9;
     --h2-color: #1e48c5;
+    --h2-page-color: #ffffff;
     --h1-font: 'Georgia', serif;
     --texte-font: Arial, sans-serif;
 }
@@ -123,7 +124,7 @@ nav ul li .sub-menu {
     margin: 0;
     padding: 10px 0;
     border-radius: 4px;
-    width: 200px;
+    width: 250px;
     opacity: 0;
     transition: opacity 0.3s ease;
     box-shadow: 0 8px 16px rgba(0,0,0,0.1);

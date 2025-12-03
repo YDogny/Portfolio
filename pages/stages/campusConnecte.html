@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="../../images/Logo_YD.png">
     <link rel="stylesheet" href="../../styles/styleCommun.css">
+    <link rel="stylesheet" href="../../styles/styleStage.css">
     <title>Campus Connecté - Yann Dogny</title>
 </head>
 <body>
@@ -33,7 +34,7 @@
                         <a href="../stages.html">Stages</a>
                         <span class="arrow"></span>
                         <ul class="sub-menu">
-                            <li><a href="campusConnecte.html">Campus Connecté</a></li>
+                            <li><a href="campusConnecte.html">Campus connecté Comminges-Pyrénées</a></li>
                         </ul>
                     </li>
                     <li class="menu-item-has-children">
@@ -47,10 +48,221 @@
             </nav>
         </header>
     </div>
-    <main>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <main class="stage-page">
+
+        <!-- 1. Titre du Stage -->
+        <section id="titre-stage" class="section">
+            <h1>Campus Connecté Comminges-Pyrénées</h1>
+
+            <img src="../../images/stages/CampusCo/imgCampusCo.webp" alt="image du campus connecter">
+
+            <div class="info-grid">
+                <div><strong>Durée :</strong> 26 mai au 27 juin 2025 (5 semaines)</div>
+                <div><strong>Organisation :</strong> 
+                    <a href="https://www.campusconnecte-stgo.fr/" target="_blank" id="campus-connecte-link">
+                        Campus Connecté Saint-Gaudens Comminges Pyrénées
+                    </a>
+                </div>
+                <div><strong>Adresse :</strong> 12 Rue Robert Schumann, 31800 Saint-Gaudens</div>
+                <div><strong>Responsable :</strong> Magali Armagnac</div>
+                <div><strong>Contact :</strong> 05 36 85 18 36 — campusconnecte@stgo.fr</div>
+            </div>
+        </section>
+
+        <hr>
+
+        <!-- 2. Résumé du Stage -->
+        <section id="resume-stage" class="section">
+            <h2>Résumé du Stage</h2>
+            <p>
+                Dans le cadre de mon stage d’informatique au Campus Connecté de Saint-Gaudens, 
+                j’ai participé au développement d’une application web destinée à moderniser 
+                la gestion administrative des étudiants : présence, absences, événements, ateliers, 
+                sessions et statistiques.  
+            </p>
+            <p>
+                Ce projet avait pour objectif de remplacer une gestion encore majoritairement papier 
+                par un outil numérique centralisé, sécurisé et plus adapté aux besoins quotidiens 
+                de l’établissement.
+            </p>
+        </section>
+
+        <hr>
+
+        <!-- 3. Informations sur l'Organisation -->
+        <section id="entreprise" class="section">
+            <h2>À propos de l'Organisation</h2>
+            <p>
+                Le Campus Connecté Comminges-Pyrénées accompagne les étudiants dans leur formation 
+                et leur quotidien, en leur offrant un lieu de travail, des ressources pédagogiques 
+                et un soutien personnalisé. 
+            </p>
+            <p>
+                Sa mission principale est de faciliter l’accès aux études supérieures, notamment 
+                pour les personnes rencontrant des difficultés géographiques ou matérielles.
+            </p>
+        </section>
+
+        <hr>
+
+        <!-- 4. Missions et Objectifs -->
+        <section id="missions" class="section">
+            <h2>Missions et Objectifs</h2>
+
+            <div class="flex-lists">
+                <div>
+                    <h3>Missions initiales prévues :</h3>
+                    <ul>
+                        <li>Développer une application de gestion des absences / présences</li>
+                        <li>Créer un système de prise de rendez-vous</li>
+                        <li>Gérer les événements et ateliers</li>
+                        <li>Migrer l’ancien site vers celui de la mairie</li>
+                        <li>Automatiser les publications sur les réseaux sociaux</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3>Missions réellement effectuées :</h3>
+                    <ul>
+                        <li>Migrer le site du Campus vers la plateforme de la mairie</li>
+                        <li>
+                            Développer une application web complète (type Pronote) avec :
+                            <ul>
+                                <li>Gestion des présences / absences</li>
+                                <li>Gestion des ateliers, événements et sessions</li>
+                                <li>Statistiques avancées (taux de présence, graphiques…)</li>
+                                <li>Justification des absences (étudiants & personnel)</li>
+                                <li>Interface étudiante + interface personnel</li>
+                                <li>QR Code pour l’enregistrement de présence</li>
+                            </ul>
+                        </li>
+                        <li>L’automatisation des posts n’a pas pu être réalisée faute de temps</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <hr>
+
+        <!-- 5. Compétences Développées -->
+        <section id="competences" class="section">
+            <h2>Compétences Développées</h2>
+            <div class="grid-cards">
+                <div>Création et lecture de QR Codes</div>
+                <div>Développement d’une base de données évolutive</div>
+                <div>Création de graphiques et statistiques</div>
+                <div>Transfert de données JS → PHP (AJAX)</div>
+                <div>Gestion d’un projet web complet (architecture, organisation, tests)</div>
+                <div>Compréhension des limites de sécurité d’un site non HTTPS</div>
+            </div>
+        </section>
+
+        <hr>
+
+        <!-- 6. Technologies Utilisées -->
+        <section id="technologies" class="section">
+            <h2>Technologies Utilisées</h2>
+            <div class="grid-cards">
+                <div>PHP 8</div>
+                <div>JavaScript (AJAX, APIs, QR Code)</div>
+                <div>MySQL</div>
+                <div>HTML / CSS</div>
+                <div>Charts.js (statistiques)</div>
+                <div>Serveur local + configuration serveur mairie</div>
+            </div>
+        </section>
+
+        <hr>
+
+        <!-- 7. Projets Réalisés -->
+        <section id="projets" class="section">
+            <h2>Projets Réalisés</h2>
+            <ul>
+                <li>Enregistrement automatique des présences via QR Code</li>
+                <li>Gestion des ateliers, événements et sessions</li>
+                <li>Suivi des absences avec justificatifs</li>
+                <li>Tableau de bord statistique personnalisable</li>
+                <li>Mise en place d’une base de données complète et modulable</li>
+                <li>Migration du site vers le portail de la mairie</li>
+            </ul>
+            <p>2 des 3 missions principales ont été finalisées à 100%.</p>
+        </section>
+
+        <hr>
+
+        <!-- 8. Difficultés et Solutions -->
+        <section id="difficultes" class="section">
+            <h2>Difficultés Rencontrées</h2>
+            <ul>
+                <li>Difficulté à transmettre une donnée JS → PHP (résolu avec AJAX)</li>
+                <li>Choix et organisation des statistiques (solution : échange direct avec Magali)</li>
+                <li>Gros problème final : impossibilité d’accéder à la caméra sur un site non sécurisé (HTTP) → solution de dernière minute : installer l’application sur chaque poste</li>
+                <li>Erreurs liées à la version PHP du serveur</li>
+                <li>Code manquant ou incompatible lors du déploiement</li>
+            </ul>
+            <p>Malgré ces obstacles, chaque problème a été analysé, compris et résolu de manière méthodique.</p>
+        </section>
+
+        <hr>
+
+        <!-- 9. Conclusion -->
+        <section id="conclusion" class="section">
+            <h2>Conclusion</h2>
+            <p>Ce stage a été extrêmement enrichissant, tant sur le plan technique que personnel. Malgré les difficultés et le manque de temps sur certains aspects, nous avons réussi à livrer une application fonctionnelle, utile et adaptée aux besoins du Campus.</p>
+            <p>J’ai appris de nouvelles technologies, amélioré ma méthode de travail, découvert l’importance d’une bonne organisation et compris l’importance d’anticiper les problèmes techniques avant le déploiement.</p>
+        </section>
 
     </main>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     <footer>
+        <img src="../../images/stages/CampusCo/logo.png" alt="Logo Campus Connecté" style="max-width: 100px; vertical-align: middle; margin-right: 20px;">
         &copy; 2025 - Portfolio de Yann Dogny
     </footer>
     <script>
