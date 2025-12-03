@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="../images/Logo_YD.png">
-    <link rel="stylesheet" href="../styles/styleVeille.css">
+    <link rel="stylesheet" href="../styles/styleStage.css">
     <title>Stages - Yann Dogny</title>
 </head>
 <body>
@@ -27,14 +27,19 @@
                     <li><a href="../index.html">Accueil</a></li>
                     <li><a href="cv.html">CV</a></li>
                     <li><a href="competences.html">Compétences</a></li>
-                    <li><a href="projets.html">Projets</a></li>
-
+                    <li class="menu-item-has-children">
+                            <a href="projets.html">Projets</a>
+                            <span class="arrow"></span>
+                        <ul class="sub-menu">
+                            <li><a href="projets/projetFa.html">Projet Fâ</a></li>
+                            <li><a href="projets/gestionCom.html">Gestion Commandes V2</a></li>
+                        </ul>
+                    </li>
                     <li class="menu-item-has-children">
                         <a href="stages.html">Stages</a>
                         <span class="arrow"></span>
                         <ul class="sub-menu">
-                            <li><a href="stage1.html">Campus Connecté</a></li>
-                            <li><a href="stage2.html">Stage 2</a></li>
+                            <li><a href="stages/campusConnecte.html">Campus Connecté</a></li>
                         </ul>
                     </li>
 
@@ -59,16 +64,11 @@
         <div class="card-container">
             <!-- Card 1 -->
             <div class="card">
-                <h3>Stage 1 : Nom du sujet</h3>
-                <p>Résumé ou description courte de la veille, les points clés, et éventuellement ce qui a été appris.</p>
-                <a href="stage1.html" class="btn">Voir la veille</a>
-            </div>
-
-            <!-- Card 2 -->
-            <div class="card">
-                <h3>Stage 2 : Nom du sujet</h3>
-                <p>Résumé ou description courte de la veille, les points clés, et éventuellement ce qui a été appris.</p>
-                <a href="stage2.html" class="btn">Voir la veille</a>
+                <h3>BTS SIO, 1ère année - Campus Connecté :</h3>
+                <p><i>25 mai 2025 au 26 juin 2025</i> au <b>Campus connecté de Saint-Gaudens</b>.
+                    <br><br>- Création d'une solution applicative.
+                </p>
+                <a href="stages/campusConnecte.html" class="btn">Détails</a>
             </div>
         </div>
     </main>

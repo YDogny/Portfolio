@@ -37,8 +37,8 @@ body {
 
 /* ---- HERO ---- */
 .hero {
-    height: 15vh;
-    background: url("../images/fond.jpg") no-repeat center center;
+    height: 20vh;
+    background: url("../images/fond.webp") no-repeat center center;
     background-size: cover;
     display: flex;
     justify-content: center;
@@ -153,7 +153,7 @@ nav ul li .sub-menu li a:hover {
 /* =================== MAIN =================== */
 main {
     padding: 40px 20px;
-    margin-top: 25vh;
+    margin-top: 30vh;
     flex: 1;
 }
 
@@ -234,7 +234,7 @@ main p {
 footer {
     background-color: var(--fond-menu);
     text-align: center;
-    padding: 10px;
+    padding: 20px;
     font-size: 12px;
     color: var(--texte);
     margin-top: auto;
