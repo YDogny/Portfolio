@@ -4,23 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="../images/Logo_YD.png">
-    <link rel="stylesheet" href="../styles/styleStage.css">
+    <link rel="stylesheet" href="../styles/styleCommun.css">
+    <link rel="stylesheet" href="../styles/stylesCards.css">
     <title>Stages - Yann Dogny</title>
 </head>
 <body>
-
-    <!-- =================== HEADER =================== -->
     <div id="header-container">
-
-        <!-- Section Héros -->
         <section class="hero">
             <h1>
                 <img src="../images/Logo_YD.png" alt="Logo" class="logo-hero">
                 Portfolio de Yann Dogny
             </h1>
         </section>
-
-        <!-- MENU NAVIGATION -->
         <header>
             <nav>
                 <ul>
@@ -42,7 +37,6 @@
                             <li><a href="stages/campusConnecte.html">Campus Connecté</a></li>
                         </ul>
                     </li>
-
                     <li class="menu-item-has-children">
                         <a href="#">Veille <span class="arrow"></span></a>
                         <ul class="sub-menu">
@@ -50,19 +44,13 @@
                             <li><a href="veille2.html">Veille 2ème année</a></li>
                         </ul>
                     </li>
-
-                    <li><a href="contact.html">Contact</a></li>
                 </ul>
             </nav>
         </header>
     </div>
-
-    <!-- =================== CONTENU PRINCIPAL =================== -->
     <main>
         <h2 style="text-align:center; margin-bottom:30px;">Stages</h2>
-
         <div class="card-container">
-            <!-- Card 1 -->
             <div class="card">
                 <h3>BTS SIO, 1ère année - Campus Connecté :</h3>
                 <p><i>25 mai 2025 au 26 juin 2025</i> au <b>Campus connecté de Saint-Gaudens</b>.
@@ -72,16 +60,10 @@
             </div>
         </div>
     </main>
-
-
-    <!-- =================== FOOTER =================== -->
     <footer>
         &copy; 2025 - Portfolio de Yann Dogny
     </footer>
-
-    <!-- =================== SCRIPTS =================== -->
     <script>
-        // Menu déroulant avec flèche
         document.addEventListener("DOMContentLoaded", function() {
             const menuItems = document.querySelectorAll("nav ul li.menu-item-has-children");
             menuItems.forEach(item => {
@@ -98,6 +80,5 @@
             });
         });
     </script>
-
 </body>
 </html>

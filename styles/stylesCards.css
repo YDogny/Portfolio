@@ -1,0 +1,105 @@
+/* =================== MAIN =================== */
+main {
+    padding: 40px 20px;
+    margin-top: 30vh;
+    flex: 1;
+}
+
+main h2 {
+    font-size: 2rem;
+    color: var(--h2-color);
+    font-family: var(--h1-font);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 18px;
+}
+
+main h3 {
+    font-size: 1.3rem;
+    color: #001c46;
+    margin-top: 18px;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+main p {
+    color: #2d3655;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 16px;
+}
+
+/* =================== CARDS =================== */
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 50px;
+    width: 100%;
+    margin-top: 50px;
+}
+
+.card {
+    background-color: #f0f4ff;
+    border-radius: 12px;
+    padding: 20px;
+    width: 30%;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.card h3 {
+    font-size: 1.3rem;
+    color: var(--h2-color);
+    margin-bottom: 12px;
+}
+
+.card p {
+    font-size: 1rem;
+    color: #2d3655;
+    margin-bottom: 16px;
+    line-height: 1.4;
+}
+
+.card .btn {
+    align-self: flex-start;
+    text-decoration: none;
+}
+
+/* =================== BOUTONS =================== */
+.btn {
+    background: #163697;
+    color: var(--texte);
+    border: 1px solid var(--h2-color);
+    padding: 8px 30px;
+    border-radius: 8px;
+    margin: 0 auto;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
+}
+
+.btn:hover {
+    background: var(--h2-color);
+    color: #fff;
+    transform: scale(1.03);
+}
+
+.btn-active {
+    background: var(--h2-color);
+    color: #fff;
+    border: none;
+    font-weight: bold;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+}
+
+/* =================== LIENS =================== */
+a {
+    color: var(--h2-color);
+    text-decoration: underline;
+}
+
+a:hover {
+    color: #002d94;
+}

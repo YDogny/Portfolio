@@ -4,23 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="../images/Logo_YD.png">
-    <link rel="stylesheet" href="../styles/styleProjet.css">
+    <link rel="stylesheet" href="../styles/styleCommun.css">
+    <link rel="stylesheet" href="../styles/stylesCards.css">
     <title>Projets - Yann Dogny</title>
 </head>
 <body>
-
-    <!-- =================== HEADER =================== -->
     <div id="header-container">
-
-        <!-- Section Héros -->
         <section class="hero">
             <h1>
                 <img src="../images/Logo_YD.png" alt="Logo" class="logo-hero">
                 Portfolio de Yann Dogny
             </h1>
         </section>
-
-        <!-- MENU NAVIGATION -->
         <header>
             <nav>
                 <ul>
@@ -42,7 +37,6 @@
                             <li><a href="stages/campusConnecte.html">Campus Connecté</a></li>
                         </ul>
                     </li>
-
                     <li class="menu-item-has-children">
                         <a href="#">Veille <span class="arrow"></span></a>
                         <ul class="sub-menu">
@@ -50,26 +44,18 @@
                             <li><a href="veille2.html">Veille 2ème année</a></li>
                         </ul>
                     </li>
-
-                    <li><a href="contact.html">Contact</a></li>
                 </ul>
             </nav>
         </header>
     </div>
-
-    <!-- =================== CONTENU PRINCIPAL =================== -->
     <main>
         <h2 style="text-align:center; margin-bottom:30px;">Projets</h2>
-
         <div class="card-container">
-            <!-- Card 1 -->
             <div class="card">
                 <h3>Atelier pro, 2ème année - Projet Fâ :</h3>
                 <p>à compléter</p>
                 <a href="projets/projetFa.html" class="btn">Détails</a>
             </div>
-
-            <!-- Card 2 -->
             <div class="card">
                 <h3>Bloc 2, 2ème année - Gestion Commandes V2 :</h3>
                 <p>à compléter</p>
@@ -77,16 +63,10 @@
             </div>
         </div>
     </main>
-
-
-    <!-- =================== FOOTER =================== -->
     <footer>
         &copy; 2025 - Portfolio de Yann Dogny
     </footer>
-
-    <!-- =================== SCRIPTS =================== -->
     <script>
-        // Menu déroulant avec flèche
         document.addEventListener("DOMContentLoaded", function() {
             const menuItems = document.querySelectorAll("nav ul li.menu-item-has-children");
             menuItems.forEach(item => {
@@ -103,6 +83,5 @@
             });
         });
     </script>
-
 </body>
 </html>

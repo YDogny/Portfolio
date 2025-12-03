@@ -1,153 +1,3 @@
-:root {
-    --texte: #f6f8fa;
-    --fond: #6291e9;
-    --fond-menu: #163697;
-    --section-bg: #6291e9;
-    --h2-color: #1e48c5;
-    --h1-font: 'Georgia', serif;
-    --texte-font: Arial, sans-serif;
-}
-
-html, body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-}
-
-body {
-    font-family: var(--texte-font);
-    font-size: 15px;
-    color: var(--texte);
-    background-color: var(--fond);
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-}
-
-/* ================= HEADER ================= */
-#header-container {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1000;
-}
-
-header {
-    background-color: var(--fond-menu);
-    width: 100%;
-    text-align: center;
-    padding: 15px 0;
-    transition: all 0.3s ease;
-}
-
-/* ===== HERO ===== */
-.hero {
-    height: 20vh;
-    background: url("../images/fond.webp") no-repeat center center;
-    background-size: cover;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 0 4px 24px rgba(30,44,84,0.18);
-}
-
-.hero h1 {
-    color: var(--texte);
-    font-size: 4rem;
-    margin-bottom: 12px;
-    letter-spacing: 1px;
-    font-family: Impact, sans-serif;
-}
-
-.logo-hero {
-    height: 80px;
-    width: 80px;
-    vertical-align: middle;
-    margin-right: 18px;
-}
-
-/* ================= MENU ================= */
-nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-}
-
-nav ul li {
-    position: relative;
-    margin: 0 15px;
-}
-
-nav ul li a {
-    font-family: Arial, sans-serif;
-    font-size: 16px;
-    color: var(--texte);
-    text-decoration: none;
-    font-weight: bold;
-    padding: 10px;
-    display: block;
-    transition: color 0.3s;
-}
-
-nav ul li a:hover {
-    color: #dcdcdc;
-}
-
-/* Flèche pour les menus déroulants */
-nav ul li.menu-item-has-children .arrow {
-    content: "";
-    width: 8px;
-    height: 8px;
-    border-left: 2px solid white;
-    border-bottom: 2px solid white;
-    position: absolute;
-    right: -12px;
-    top: 50%;
-    transform: translateY(-50%) rotate(-45deg);
-    transition: transform 0.3s ease;
-}
-
-nav ul li.menu-item-has-children.open .arrow {
-    transform: translateY(-50%) rotate(135deg);
-}
-
-/* Sous-menu déroulant */
-nav ul li .sub-menu {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background-color: #1b3ba0;
-    list-style-type: none;
-    margin: 0;
-    padding: 10px 0;
-    border-radius: 4px;
-    width: 200px;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
-    z-index: 999;
-}
-
-nav ul li.open .sub-menu {
-    display: block;
-    opacity: 1;
-}
-
-nav ul li .sub-menu li a {
-    padding: 8px 20px;
-    color: white;
-    display: block;
-}
-
-nav ul li .sub-menu li a:hover {
-    background-color: #f0f0f0;
-    color: black;
-}
-
 /* ================= MAIN ================= */
 main {
     padding: 40px 20px 40px 20px;
@@ -166,7 +16,7 @@ main ul li {
     color: var(--texte);
 }
 
-/* TITRES DES BLOCS */
+/* ================= COMPETENCES ================= */
 .competence-bloc h2 {
     font-size: 2rem;
     color: var(--h2-color);
@@ -205,16 +55,6 @@ main ul li {
     margin-bottom: 10px;
     color: var(--h2-color);
     font-family: var(--texte-font);
-}
-
-/* ================= FOOTER ================= */
-footer {
-    background-color: var(--fond-menu);
-    text-align: center;
-    padding: 20px;
-    font-size: 12px;
-    color: var(--texte);
-    margin-top: auto;
 }
 
 /* ================= BOUTONS BLOCS ================= */
