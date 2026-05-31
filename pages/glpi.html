@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"/>
+  <link rel="icon" type="image/png" href="../image/Logo_YD.png"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>GLPI — Yann Dogny</title>
+  <link rel="stylesheet" href="../style.css"/>
+  <style>
+    .glpi-intro {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.5rem 1.75rem;
+      box-shadow: var(--shadow);
+      margin-bottom: 2rem;
+    }
+    .glpi-intro p { font-size: 0.9rem; color: var(--ink2); line-height: 1.8; }
+    .ticket-grid { display: flex; flex-direction: column; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; margin-bottom: 2rem; }
+    .ticket-card {
+      background: var(--bg2); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 1.25rem;
+      box-shadow: var(--shadow); display: flex; flex-direction: column; gap: 0.5rem;
+    }
+    .ticket-card .tc-header { display: flex; align-items: center; justify-content: space-between; }
+    .ticket-card .tc-id { font-size: 0.7rem; font-weight: 700; color: var(--ink3); letter-spacing: 0.06em; }
+    .ticket-status {
+      font-size: 0.65rem; font-weight: 600; text-transform: uppercase;
+      letter-spacing: 0.08em; padding: 0.18rem 0.6rem; border-radius: 100px;
+    }
+    .status-done   { background: var(--accent-bg); color: var(--accent); }
+    .status-prog   { background: #FDF3E7; color: #A05C10; }
+    .ticket-card h4 { font-size: 0.9rem; font-weight: 600; color: var(--ink); }
+    .ticket-card p  { font-size: 0.8rem; color: var(--ink2); line-height: 1.65; flex: 1; }
+    .ticket-card .tc-cat { font-size: 0.7rem; font-weight: 500; color: var(--accent2); }
+  </style>
+</head>
+<body>
+
+<!-- TOPBAR -->
+<header class="topbar">
+  <button class="sidebar-toggle" onclick="toggleSidebar()" aria-label="Menu">☰</button>
+  <a href="../index.html" class="topbar-brand"><img src="../image/Logo_YD.png" alt="YD" style="height:28px;width:28px;border-radius:50%;object-fit:cover;margin-right:7px;vertical-align:middle;flex-shrink:0"/>Yann <span>Dogny</span></a>
+  <ul class="topbar-nav">
+    <li><a href="../index.html" class="">Accueil</a></li>
+    <li><a href="cv.html" class="">CV</a></li>
+    <li><a href="competences.html" class="">Compétences</a></li>
+    <li><a href="projets.html" class="">Projets</a></li>
+    <li><a href="stages.html" class="">Stages</a></li>
+    <li><a href="veille.html" class="">Veille</a></li>
+    <li><a href="glpi.html" class="active">GLPI</a></li>
+    <li><a href="contact.html" class="">Contact</a></li>
+  <button class="theme-toggle" onclick="toggleTheme()" id="topbar-theme-btn" aria-label="Changer le thème">
+    <span class="toggle-label" id="topbar-theme-label">Clair</span>
+  </button>
+  </ul>
+</header>
+
+<!-- SIDEBAR OVERLAY -->
+<div class="sidebar-overlay" id="overlay"></div>
+
+<!-- SIDEBAR DRAWER -->
+<nav class="sidebar" id="sidebar">
+    <div style="display:flex;align-items:center;gap:9px;padding:0.75rem 0.75rem 0.65rem;border-bottom:1px solid var(--border);margin-bottom:0.5rem"><img src="../image/Logo_YD.png" alt="YD" style="height:34px;width:34px;border-radius:50%;object-fit:cover;flex-shrink:0"/><div><div style="font-size:0.875rem;font-weight:700;color:var(--ink);line-height:1.2">Yann Dogny</div><div style="font-size:0.68rem;color:var(--ink3)">BTS SIO SLAM</div></div></div>
+  <div class="sidebar-section-label">Navigation</div>
+  <a href="../index.html" class="nav-link">Accueil</a>
+  <a href="cv.html" class="nav-link">CV</a>
+  <a href="competences.html" class="nav-link">Compétences</a>
+  <a href="projets.html" class="nav-link">Projets</a>
+  <a href="stages.html" class="nav-link">Stages</a>
+  <a href="veille.html" class="nav-link">Veille</a>
+  <a href="glpi.html" class="nav-link active">GLPI</a>
+  <a href="contact.html" class="nav-link">Contact</a>
+  <div class="sidebar-divider"></div>
+  <button class="sidebar-theme-toggle" onclick="toggleTheme()" id="sidebar-theme-btn" aria-label="Changer le thème">
+    <span id="sidebar-theme-label">Mode sombre</span>
+    <span class="tgl-track"><span class="tgl-thumb"></span></span>
+  </button>
+
+</nav>
+
+<!-- MAIN -->
+<main class="main">
+
+  <div class="page-header">
+    <div class="breadcrumb">~/portfolio / <span>glpi</span></div>
+    <h1>GLPI</h1>
+    <p class="sub">Gestion des tickets et du parc informatique</p>
+  </div>
+
+  <div class="glpi-intro">
+    <p>
+      GLPI (Gestionnaire Libre de Parc Informatique) est un logiciel open source de gestion de parc
+      informatique et de helpdesk. Il permet de suivre les incidents, les demandes de service,
+      les actifs matériels et logiciels, ainsi que la gestion des utilisateurs.
+      Utilisé dans le cadre du BTS SIO, GLPI illustre la compétence <strong>1.2 — Réponse aux
+      incidents et demandes d'assistance</strong>.
+    </p>
+  </div>
+
+  <div class="section-label">Exemple de ticket</div>
+  <div class="ticket-grid">
+
+    <img src="../image/ticket.png" alt="Ticket GLPI" style="width: 100%;">
+    <div class="glpi-intro">Voici un exemple de ticket réalisé avec un camarade de classe pour en comprendre le fonctionnement.</div>
+  </div>
+
+  <hr class="soft"/>
+
+  <div class="section-label">Compétences mobilisées</div>
+  <div class="info-table" style="max-width:600px">
+    <div class="info-row">
+      <span class="lbl" style="min-width:50px">1.2</span>
+      <span class="val">Réponse aux incidents et demandes d'assistance</span>
+    </div>
+  </div>
+
+</main>
+
+<div class="toast" id="toast"></div>
+<script>
+/* ── Theme ── */
+(function(){
+  const saved = localStorage.getItem('theme');
+  if(saved === 'dark' || (!saved && window.matchMedia('(prefers-color-scheme: dark)').matches)){
+    document.documentElement.setAttribute('data-theme','dark');
+  }
+})();
+
+function syncThemeButtons(){
+  const dark = document.documentElement.getAttribute('data-theme') === 'dark';
+  const tl = document.getElementById('topbar-theme-label');
+  const sl = document.getElementById('sidebar-theme-label');
+  if(tl){ tl.textContent = dark ? 'Sombre' : 'Clair'; }
+  if(sl){ sl.textContent = dark ? 'Mode clair' : 'Mode sombre'; }
+}
+
+function toggleTheme(){
+  const dark = document.documentElement.getAttribute('data-theme') === 'dark';
+  document.documentElement.setAttribute('data-theme', dark ? 'light' : 'dark');
+  localStorage.setItem('theme', dark ? 'light' : 'dark');
+  syncThemeButtons();
+}
+
+document.addEventListener('DOMContentLoaded', syncThemeButtons);
+
+/* ── Sidebar ── */
+function toggleSidebar(){
+  document.getElementById('sidebar').classList.toggle('open');
+  document.getElementById('overlay').classList.toggle('open');
+}
+document.getElementById('overlay').addEventListener('click',()=>{
+  document.getElementById('sidebar').classList.remove('open');
+  document.getElementById('overlay').classList.remove('open');
+});
+
+/* ── Toast / copy ── */
+function showToast(msg){
+  const t=document.getElementById('toast');
+  t.textContent=msg; t.classList.add('show');
+  setTimeout(()=>t.classList.remove('show'),2200);
+}
+function copyText(e,text){
+  e.preventDefault(); e.stopPropagation();
+  navigator.clipboard.writeText(text).then(()=>showToast('✓ Copié !'));
+}
+function toggleDetail(id){
+  const el=document.getElementById('dp-'+id);
+  const btn=el.previousElementSibling;
+  el.classList.toggle('open');
+  btn.innerHTML=el.classList.contains('open')?'✕ Fermer':'› Détails';
+}
+</script>
+</body>
+</html>

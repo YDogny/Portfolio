@@ -1,196 +1,224 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" href="../images/Logo_YD.png">
-    <link rel="stylesheet" href="../styles/styleCommun.css">
-    <link rel="stylesheet" href="../styles/styleCV.css">
-    <title>CV - Yann Dogny</title>
+  <meta charset="UTF-8"/>
+  <link rel="icon" type="image/png" href="../image/Logo_YD.png"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CV</title>
+  <link rel="stylesheet" href="../style.css"/>
+
 </head>
 <body>
-    <div id="header-container">
-        <section class="hero">
-            <h1>
-                <img src="../images/Logo_YD.png" alt="Logo" class="logo-hero">
-                Portfolio de Yann Dogny
-            </h1>
-        </section>
-        <header>
-            <nav>
-                <ul>
-                    <li><a href="../index.html">Accueil</a></li>
-                    <li><a href="cv.html">CV</a></li>
-                    <li><a href="competences.html">Compétences</a></li>
-                    <li class="menu-item-has-children">
-                            <a href="projets.html">Projets</a>
-                            <span class="arrow"></span>
-                        <ul class="sub-menu">
-                            <li><a href="projets/projetFa.html">Projet Fâ</a></li>
-                            <li><a href="projets/gestionCom.html">Gestion Commandes V2</a></li>
-                        </ul>
-                    </li>
-                    <li class="menu-item-has-children">
-                        <a href="stages.html">Stages</a>
-                        <span class="arrow"></span>
-                        <ul class="sub-menu">
-                            <li><a href="stages/campusConnecte.html">Campus connecté Comminges-Pyrénées</a></li>
-                        </ul>
-                    </li>
-                    <li class="menu-item-has-children">
-                        <a href="#">Veille <span class="arrow"></span></a>
-                        <ul class="sub-menu">
-                            <li><a href="veilles/veille1.html">Veille 1ère année</a></li>
-                            <li><a href="veilles/veille2.html">Veille 2ème année</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </nav>
-        </header>
-    </div>
-    <main>
-        <section class="cv-section about-section">
-            <h2>À PROPOS</h2>
-            <ul class="about-list">
-                <li><span class="about-icon">🎂</span> <strong>Date de naissance :</strong> 08/02/2006</li>
-                <li><span class="about-icon">📍</span> <strong>Ville :</strong> Pau - 64000</li>
-                <li><span class="about-icon">✉️</span> <strong>Email :</strong> yanndogny47@gmail.com</li>
-                <li><span class="about-icon">📞</span> <strong>Téléphone :</strong> 07 80 42 99 97</li>
-            </ul>
-            <div class="qualities">
-                <span class="quality quality-logic">Logique</span>
-                <span class="quality quality-adapt">Adaptable</span>
-                <span class="quality quality-serieux">Sérieux</span>
-                <span class="quality quality-passion">Passionné</span>
-                <span class="quality quality-perseverant">Persévérant</span>
-            </div>
-        </section>
-        <hr class="cv-separator">
-        <section class="cv-section">
-            <h2>COMPÉTENCES</h2>
-            <div class="competences-grid">
-                <div class="competence-card">
-                    <h3>Programmation & Développement</h3>
-                    <ul>
-                        <li>Java, Python, Javascript, PHP, SQL, MySQL, NoSQL</li>
-                        <li>Programmation Orientée Objet (POO)</li>
-                        <li>HTML, CSS</li>
-                        <li>Développement Android</li>
-                        <li>Framework : Symfony</li>
-                        <li>CMS : WordPress, Prestashop, Joomla</li>
-                        <li>Structures de données, Récursivité</li>
-                    </ul>
-                </div>
-                <div class="competence-card">
-                    <h3>Outils & Méthodes de développement</h3>
-                    <ul>
-                        <li>IDE : NETBEANS, Brackets, Visual Studio Code</li>
-                        <li>Architecture MVC (Modèle-Vue-Contrôleur)</li>
-                        <li>Design Pattern : Data Access Object (DAO)</li>
-                        <li>Intégration continue</li>
-                        <li>Documentation du code et génération automatique</li>
-                        <li>Gestion de versions (Git)</li>
-                    </ul>
-                </div>
-                <div class="competence-card">
-                    <h3>Conception & Modélisation</h3>
-                    <ul>
-                        <li>Méthode MERISE (MCD)</li>
-                        <li>UML (diagrammes de classes, cas d’utilisation, séquences)</li>
-                        <li>Modélisation des données d’une BD</li>
-                    </ul>
-                </div>
-                <div class="competence-card">
-                    <h3>Cybersécurité & Qualité</h3>
-                    <ul>
-                        <li>Lois : RGPD, CNIL</li>
-                        <li>Bonnes pratiques</li>
-                        <li>Installation chiffrement, Signature électronique</li>
-                        <li>Installation pare-feu, antivirus</li>
-                        <li>Sécurisation du SI</li>
-                        <li>Tests unitaires, d’intégration et fonctionnels</li>
-                        <li>Sensibilisation :</li>
-                        <ul>
-                            <li>Qualité du code (SonarQube)</li>
-                            <li>Écoconception (Ecocode / Creedneng)</li>
-                            <li>Sécurité du code (Snyk)</li>
-                        </ul>
-                    </ul>
-                </div>
-                <div class="competence-card">
-                    <h3>Systèmes & Réseaux</h3>
-                    <ul>
-                        <li>Machines virtuelles</li>
-                        <li>Commandes DOS et UNIX / Scripts</li>
-                        <li>SSH, FTP, serveurs Web, DNS, DHCP</li>
-                        <li>Adressage IP et sous-réseaux</li>
-                        <li>Maquettage</li>
-                        <li>Tâches planifiées</li>
-                        <li>Documentation technique</li>
-                    </ul>
-                </div>
-                <div class="competence-card">
-                    <h3>Gestion de projet</h3>
-                    <ul>
-                        <li>Méthodologies : Agile, SCRUM</li>
-                        <li>Outils : Gantt</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-        <hr class="cv-separator">
-        </section>
-        <section class="cv-section">
-            <h2>FORMATIONS</h2>
-            <ul>
-                <li><strong>BTS Services Informatiques aux Organisations</strong> <br>Spécialité Solutions Logicielles et Applications Métiers<br>Lycée Saint-John Perse - Pau (64000) <span>2024 - 2026</span></li>
-                <li><strong>Bac Générale Options (Numérique et Science Informatique/Mathématiques)</strong><br>Cité Scolaire Stendhal - Aiguillon (47190) <span>2024</span></li>
-            </ul>
-        </section>
-        <section class="cv-section">
-            <h2>EXPÉRIENCES</h2>
-            <ul>
-                <li><strong>STAGE de 1ère année de BTS</strong><br>26 mai au 27 juin 2025 — Campus connecté - Saint-Gaudens (31800)<br>
-                <em>Création d’une solution applicative de gestion des présences, des absences, de prise de rendez-vous et d’inscription à des événements.<br>Travail en équipe.</em></li>
-            </ul>
-        </section>
-        <section class="cv-section">
-            <h2 class="langues-title">LANGUES</h2>
-            <div class="langues-section">
-                <ul>
-                    <li>Français : Natif</li>
-                    <li>Anglais : Niveau B1</li>
-                </ul>
-            </div>
-        </section>
-    </main>
-    <footer>
-        &copy; 2025 - Portfolio de Yann Dogny
-    </footer>
-    <script>
-    document.addEventListener("DOMContentLoaded", function() {
-        // Gestion des sous-menus
-        const menuItems = document.querySelectorAll("nav ul li.menu-item-has-children");
-        menuItems.forEach(function(item) {
-            const arrow = item.querySelector(".arrow");
-            if (arrow) {
-                arrow.addEventListener("click", function(e) {
-                    e.stopPropagation();
-                    item.classList.toggle("open");
-                    menuItems.forEach(other => {
-                        if (other !== item) other.classList.remove("open");
-                    });
-                });
-            }
-        });
 
-        // Gestion des compétences repliables
-        document.querySelectorAll('.competence-card h3').forEach(title => {
-            title.addEventListener('click', () => {
-                title.parentElement.classList.toggle('active');
-            });
-        });
-    });
-    </script>
+<!-- TOPBAR -->
+<header class="topbar">
+  <button class="sidebar-toggle" onclick="toggleSidebar()" aria-label="Menu">☰</button>
+  <a href="../index.html" class="topbar-brand"><img src="../image/Logo_YD.png" alt="YD" style="height:28px;width:28px;border-radius:50%;object-fit:cover;margin-right:7px;vertical-align:middle;flex-shrink:0"/>Yann <span>Dogny</span></a>
+    <ul class="topbar-nav">
+    <li><a href="../index.html" class="">Accueil</a></li>
+    <li><a href="cv.html" class="active">CV</a></li>
+    <li><a href="competences.html" class="">Compétences</a></li>
+    <li><a href="projets.html" class="">Projets</a></li>
+    <li><a href="stages.html" class="">Stages</a></li>
+    <li><a href="veille.html" class="">Veille</a></li>
+    <li><a href="glpi.html" class="">GLPI</a></li>
+    <li><a href="contact.html" class="">Contact</a></li>
+  <button class="theme-toggle" onclick="toggleTheme()" id="topbar-theme-btn" aria-label="Changer le thème">
+    <span class="toggle-label" id="topbar-theme-label">Clair</span>
+  </button>
+  </ul>
+</header>
+
+<!-- SIDEBAR OVERLAY -->
+<div class="sidebar-overlay" id="overlay"></div>
+
+<!-- SIDEBAR DRAWER -->
+<nav class="sidebar" id="sidebar">
+  <div style="display:flex;align-items:center;gap:9px;padding:0.75rem 0.75rem 0.65rem;border-bottom:1px solid var(--border);margin-bottom:0.5rem"><img src="../image/Logo_YD.png" alt="YD" style="height:34px;width:34px;border-radius:50%;object-fit:cover;flex-shrink:0"/><div><div style="font-size:0.875rem;font-weight:700;color:var(--ink);line-height:1.2">Yann Dogny</div><div style="font-size:0.68rem;color:var(--ink3)">BTS SIO SLAM</div></div></div>
+    <div class="sidebar-section-label">Navigation</div>
+  <a href="../index.html" class="nav-link">Accueil</a>
+  <a href="cv.html" class="nav-link active">CV</a>
+  <a href="competences.html" class="nav-link">Compétences</a>
+  <a href="projets.html" class="nav-link">Projets</a>
+  <a href="stages.html" class="nav-link">Stages</a>
+  <a href="veille.html" class="nav-link">Veille</a>
+  <a href="glpi.html" class="nav-link">GLPI</a>
+  <a href="contact.html" class="nav-link">Contact</a>
+
+
+  <div class="sidebar-divider"></div>
+  <button class="sidebar-theme-toggle" onclick="toggleTheme()" id="sidebar-theme-btn" aria-label="Changer le thème">
+    <span id="sidebar-theme-label">Mode sombre</span>
+    <span class="tgl-track"><span class="tgl-thumb"></span></span>
+  </button>
+
+</nav>
+
+<!-- MAIN -->
+<main class="main">
+
+  <div class="page-header">
+    <div class="breadcrumb">~/portfolio / <span>cv</span></div>
+    <h1>Curriculum Vitae</h1>
+    <p class="sub">Informations, formations et expériences</p>
+  </div>
+
+  <div class="section-label">Informations &amp; coordonnées</div>
+  <div class="info-table" style="margin-bottom:2rem">
+    <div class="info-row"><span class="lbl">Naissance</span><span class="val">08 / 02 / 2006</span></div>
+    <div class="info-row"><span class="lbl">Ville</span><span class="val">Pau — 64000</span></div>
+    <div class="info-row"><span class="lbl">Email</span><span class="val"><a href="mailto:yanndogny47@gmail.com">yanndogny47@gmail.com</a></span></div>
+    <div class="info-row"><span class="lbl">Téléphone</span><span class="val"><a href="tel:0780429997">07 80 42 99 97</a></span></div>
+  </div>
+
+  <hr class="soft"/>
+
+  <div class="section-label">Formations</div>
+  <div class="timeline" style="margin-bottom:2rem">
+    <div class="tl-item">
+      <div class="period">2024 — 2026</div>
+      <span class="ttype edu">Formation</span>
+      <h3>BTS Services Informatiques aux Organisations</h3>
+      <div class="org">Lycée Saint-John Perse — Pau (64000)</div>
+      <p>Spécialité Solutions Logicielles et Applications Métiers (SLAM). Développement d'applications, gestion de projet, cybersécurité, systèmes &amp; réseaux.</p>
+    </div>
+    <div class="tl-item">
+      <div class="period">2021 — 2024</div>
+      <span class="ttype edu">Formation</span>
+      <h3>Baccalauréat Général</h3>
+      <div class="org">Cité Scolaire Stendhal — Aiguillon (47190)</div>
+      <p>Options Numérique et Sciences Informatiques (NSI) et Mathématiques.</p>
+    </div>
+  </div>
+
+  <hr class="soft"/>
+
+  <div class="section-label">Expériences professionnelles</div>
+  <div class="timeline" style="margin-bottom:2rem">
+    <div class="tl-item">
+      <div class="period">5 Janvier — 13 Février 2026</div>
+      <span class="ttype exp">Stage</span>
+      <h3>Développeur — SASU SEDIMA</h3>
+      <div class="org">Bourran (47320) · Travail individuel</div>
+      <p>Création d'une solution applicative de présentation de l'entreprise et de ses produits.</p>
+    </div>
+    <div class="tl-item">
+      <div class="period">26 Mai — 27 Juin 2025</div>
+      <span class="ttype exp">Stage</span>
+      <h3>Développeur — Campus Connecté Comminges-Pyrénées</h3>
+      <div class="org">Saint-Gaudens (31800) · Travail en équipe</div>
+      <p>Création d'une solution applicative de gestion des présences, des absences, de prise de rendez-vous et d'inscription à des événements.</p>
+    </div>
+  </div>
+
+  <hr class="soft"/>
+
+  <div class="section-label">Stack technique</div>
+  <div class="skill-grid" style="margin-bottom:2rem">
+    <div class="skill-block">
+      <h3>Langages</h3>
+      <div class="tags">
+        <span class="tag accent">Java</span><span class="tag accent">Python</span>
+        <span class="tag accent">JavaScript</span><span class="tag blue">PHP</span>
+        <span class="tag blue">SQL / MySQL</span><span class="tag">NoSQL</span>
+        <span class="tag">HTML</span><span class="tag">CSS</span>
+      </div>
+    </div>
+    <div class="skill-block">
+      <h3>Frameworks &amp; CMS</h3>
+      <div class="tags">
+        <span class="tag accent">Symfony</span><span class="tag blue">Android</span>
+        <span class="tag">WordPress</span><span class="tag">PrestaShop</span><span class="tag">Joomla</span>
+      </div>
+    </div>
+    <div class="skill-block">
+      <h3>Outils &amp; méthodes</h3>
+      <div class="tags">
+        <span class="tag accent">Git</span><span class="tag blue">VS Code</span>
+        <span class="tag">MVC</span><span class="tag">DAO</span>
+        <span class="tag">Agile / SCRUM</span><span class="tag">Gantt</span>
+        <span class="tag">UML</span><span class="tag">MERISE</span>
+      </div>
+    </div>
+    <div class="skill-block">
+      <h3>Cybersécurité</h3>
+      <div class="tags">
+        <span class="tag">RGPD / CNIL</span><span class="tag">SonarQube</span>
+        <span class="tag">Snyk</span><span class="tag">Tests unitaires</span>
+        <span class="tag">SSH / FTP</span><span class="tag">Pare-feu</span>
+      </div>
+    </div>
+  </div>
+
+  <hr class="soft"/>
+
+  <div class="section-label">Langues</div>
+  <div class="card" style="max-width:420px">
+    <div class="lang-item">
+      <div class="lang-header"><span>Français</span><span class="level">Langue natale</span></div>
+      <div class="lang-bar"><div class="lang-fill" style="width:100%"></div></div>
+    </div>
+    <div class="lang-item">
+      <div class="lang-header"><span>Anglais</span><span class="level">Niveau B1</span></div>
+      <div class="lang-bar"><div class="lang-fill" style="width:55%"></div></div>
+    </div>
+  </div>
+
+</main>
+
+<div class="toast" id="toast"></div>
+<script>
+/* ── Theme ── */
+(function(){
+  const saved = localStorage.getItem('theme');
+  if(saved === 'dark' || (!saved && window.matchMedia('(prefers-color-scheme: dark)').matches)){
+    document.documentElement.setAttribute('data-theme','dark');
+  }
+})();
+
+function syncThemeButtons(){
+  const dark = document.documentElement.getAttribute('data-theme') === 'dark';
+  const tl = document.getElementById('topbar-theme-label');
+  const sl = document.getElementById('sidebar-theme-label');
+  if(tl){ tl.textContent = dark ? 'Sombre' : 'Clair'; }
+  if(sl){ sl.textContent = dark ? 'Mode clair' : 'Mode sombre'; }
+}
+
+function toggleTheme(){
+  const dark = document.documentElement.getAttribute('data-theme') === 'dark';
+  document.documentElement.setAttribute('data-theme', dark ? 'light' : 'dark');
+  localStorage.setItem('theme', dark ? 'light' : 'dark');
+  syncThemeButtons();
+}
+
+document.addEventListener('DOMContentLoaded', syncThemeButtons);
+
+/* ── Sidebar ── */
+function toggleSidebar(){
+  document.getElementById('sidebar').classList.toggle('open');
+  document.getElementById('overlay').classList.toggle('open');
+}
+document.getElementById('overlay').addEventListener('click',()=>{
+  document.getElementById('sidebar').classList.remove('open');
+  document.getElementById('overlay').classList.remove('open');
+});
+
+/* ── Toast / copy ── */
+function showToast(msg){
+  const t=document.getElementById('toast');
+  t.textContent=msg; t.classList.add('show');
+  setTimeout(()=>t.classList.remove('show'),2200);
+}
+function copyText(e,text){
+  e.preventDefault(); e.stopPropagation();
+  navigator.clipboard.writeText(text).then(()=>showToast('✓ Copié !'));
+}
+function toggleDetail(id){
+  const el=document.getElementById('dp-'+id);
+  const btn=el.previousElementSibling;
+  el.classList.toggle('open');
+  btn.innerHTML=el.classList.contains('open')?'✕ Fermer':'› Détails';
+}
+</script>
 </body>
 </html>

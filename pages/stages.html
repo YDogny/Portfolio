@@ -1,84 +1,296 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" href="../images/Logo_YD.png">
-    <link rel="stylesheet" href="../styles/styleCommun.css">
-    <link rel="stylesheet" href="../styles/stylesCards.css">
-    <title>Stages - Yann Dogny</title>
+  <meta charset="UTF-8"/>
+  <link rel="icon" type="image/png" href="../image/Logo_YD.png"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Stages</title>
+  <link rel="stylesheet" href="../style.css"/>
+  <style>
+    /* Blocs de compétences dans les projets */
+    .comp-blocks {
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+      margin-top: 0.25rem;
+    }
+    .comp-bloc-group {
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    .comp-bloc-header {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      padding: 0.5rem 0.85rem;
+      background: var(--bg3);
+      border-bottom: 1px solid var(--border);
+    }
+    .comp-bloc-header .bloc-num {
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.15rem 0.5rem;
+      border-radius: 4px;
+      white-space: nowrap;
+    }
+    .bloc-1 .bloc-num { background: #EBF0FB; color: #2D5DB5; }
+    .bloc-2 .bloc-num { background: var(--accent-bg); color: var(--accent); }
+    .bloc-3 .bloc-num { background: #FDF3E7; color: #A05C10; }
+    .comp-bloc-header .bloc-title {
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--ink3);
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+    }
+    .comp-bloc-items {
+      padding: 0.6rem 0.85rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.3rem;
+    }
+    .comp-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.6rem;
+      font-size: 0.82rem;
+      color: var(--ink2);
+      line-height: 1.5;
+    }
+    .comp-item .comp-id {
+      font-size: 0.7rem;
+      font-weight: 600;
+      white-space: nowrap;
+      padding-top: 1px;
+    }
+    .bloc-1 .comp-id { color: #2D5DB5; }
+    .bloc-2 .comp-id { color: var(--accent); }
+    .bloc-3 .comp-id { color: #A05C10; }
+  </style>
 </head>
 <body>
-    <div id="header-container">
-        <section class="hero">
-            <h1>
-                <img src="../images/Logo_YD.png" alt="Logo" class="logo-hero">
-                Portfolio de Yann Dogny
-            </h1>
-        </section>
-        <header>
-            <nav>
-                <ul>
-                    <li><a href="../index.html">Accueil</a></li>
-                    <li><a href="cv.html">CV</a></li>
-                    <li><a href="competences.html">Compétences</a></li>
-                    <li class="menu-item-has-children">
-                            <a href="projets.html">Projets</a>
-                            <span class="arrow"></span>
-                        <ul class="sub-menu">
-                            <li><a href="projets/projetFa.html">Projet Fâ</a></li>
-                            <li><a href="projets/gestionCom.html">Gestion Commandes V2</a></li>
-                        </ul>
-                    </li>
-                    <li class="menu-item-has-children">
-                        <a href="stages.html">Stages</a>
-                        <span class="arrow"></span>
-                        <ul class="sub-menu">
-                            <li><a href="stages/campusConnecte.html">Campus connecté Comminges-Pyrénées</a></li>
-                        </ul>
-                    </li>
-                    <li class="menu-item-has-children">
-                        <a href="#">Veille <span class="arrow"></span></a>
-                        <ul class="sub-menu">
-                            <li><a href="veilles/veille1.html">Veille 1ère année</a></li>
-                            <li><a href="veilles/veille2.html">Veille 2ème année</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </nav>
-        </header>
+
+<!-- TOPBAR -->
+<header class="topbar">
+  <button class="sidebar-toggle" onclick="toggleSidebar()" aria-label="Menu">☰</button>
+  <a href="../index.html" class="topbar-brand"><img src="../image/Logo_YD.png" alt="YD" style="height:28px;width:28px;border-radius:50%;object-fit:cover;margin-right:7px;vertical-align:middle;flex-shrink:0"/>Yann <span>Dogny</span></a>
+    <ul class="topbar-nav">
+    <li><a href="../index.html" class="">Accueil</a></li>
+    <li><a href="cv.html" class="">CV</a></li>
+    <li><a href="competences.html" class="">Compétences</a></li>
+    <li><a href="projets.html" class="">Projets</a></li>
+    <li><a href="stages.html" class="active">Stages</a></li>
+    <li><a href="veille.html" class="">Veille</a></li>
+    <li><a href="glpi.html" class="">GLPI</a></li>
+    <li><a href="contact.html" class="">Contact</a></li>
+  <button class="theme-toggle" onclick="toggleTheme()" id="topbar-theme-btn" aria-label="Changer le thème">
+    <span class="toggle-label" id="topbar-theme-label">Clair</span>
+  </button>
+  </ul>
+</header>
+
+<!-- SIDEBAR OVERLAY -->
+<div class="sidebar-overlay" id="overlay"></div>
+
+<!-- SIDEBAR DRAWER -->
+<nav class="sidebar" id="sidebar">
+  <div style="display:flex;align-items:center;gap:9px;padding:0.75rem 0.75rem 0.65rem;border-bottom:1px solid var(--border);margin-bottom:0.5rem"><img src="../image/Logo_YD.png" alt="YD" style="height:34px;width:34px;border-radius:50%;object-fit:cover;flex-shrink:0"/><div><div style="font-size:0.875rem;font-weight:700;color:var(--ink);line-height:1.2">Yann Dogny</div><div style="font-size:0.68rem;color:var(--ink3)">BTS SIO SLAM</div></div></div>
+    <div class="sidebar-section-label">Navigation</div>
+  <a href="../index.html" class="nav-link">Accueil</a>
+  <a href="cv.html" class="nav-link">CV</a>
+  <a href="competences.html" class="nav-link">Compétences</a>
+  <a href="projets.html" class="nav-link">Projets</a>
+  <a href="stages.html" class="nav-link active">Stages</a>
+  <a href="veille.html" class="nav-link">Veille</a>
+  <a href="glpi.html" class="nav-link">GLPI</a>
+  <a href="contact.html" class="nav-link">Contact</a>
+
+
+  <div class="sidebar-divider"></div>
+  <button class="sidebar-theme-toggle" onclick="toggleTheme()" id="sidebar-theme-btn" aria-label="Changer le thème">
+    <span id="sidebar-theme-label">Mode sombre</span>
+    <span class="tgl-track"><span class="tgl-thumb"></span></span>
+  </button>
+
+</nav>
+
+<!-- MAIN -->
+<main class="main">
+
+  <div class="page-header">
+    <div class="breadcrumb">~/portfolio / <span>stages</span></div>
+    <h1>Stages</h1>
+    <p class="sub">Immersions professionnelles — cliquez sur › Détails</p>
+  </div>
+
+  <div class="project-card">
+    <div class="pc-meta">Stage 2ème année · 5 Janvier — 13 Février 2026</div>
+    <h3>SASU SEDIMA (SOCIETE D'ETUDES, DE DIFFUSION, D'ENTRETIEN DE MATERIELS)</h3>
+    <div style="font-size:0.82rem;color:var(--ink3);margin-bottom:0.75rem">📍 Bourran (47320) · Travail individuel</div>
+    <p>Création d'une solution applicative de présentation de l'entreprise et de ses produits.</p>
+    <div class="tags">
+      <span class="tag accent">Développement web</span>
+      <span class="tag blue">PrestaShop - CMS</span>
+      <span class="tag">Gestion de projet</span>
     </div>
-    <main>
-        <h2 style="text-align:center; margin-bottom:30px;" class="h2-page">Stages</h2>
-        <div class="card-container">
-            <div class="card">
-                <h3>BTS SIO, 1ère année - Campus connecté Comminges-Pyrénées :</h3>
-                <p><i>26 mai 2025 au 27 juin 2025</i> au <b>Campus connecté de Saint-Gaudens</b>.
-                    <br><br>- Création d'une solution applicative.
-                </p>
-                <a href="stages/campusConnecte.html" class="btn">Détails</a>
-            </div>
+    <button class="expand-btn" onclick="toggleDetail('sedima')">› Détails</button>
+    <div class="detail-panel" id="dp-sedima">
+      <h4>Missions réalisées</h4>
+      <ul>
+        <li>Création d'une application web via PrestaShop.</li>
+        <li>Remplissage de l'application avec les contenus de l'entreprise et de ses produits.</li>
+      </ul>
+      <h4 style="margin-top:0.85rem">Compétences mobilisées</h4>
+      <div class="comp-blocks">
+        <div class="comp-bloc-group bloc-1">
+          <div class="comp-bloc-header">
+            <span class="bloc-num">Bloc 1</span>
+            <span class="bloc-title">Support et mise à disposition des services</span>
+          </div>
+          <div class="comp-bloc-items">
+            <div class="comp-item"><span class="comp-id">1.1</span><span>Gestion du patrimoine informatique</span></div>
+            <div class="comp-item"><span class="comp-id">1.3</span><span>Développement de la présence en ligne de l’organisation</span></div>
+            <div class="comp-item"><span class="comp-id">1.4</span><span>Travail en mode projet</span></div>
+          </div>
         </div>
-    </main>
-    <footer>
-        &copy; 2025 - Portfolio de Yann Dogny
-    </footer>
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const menuItems = document.querySelectorAll("nav ul li.menu-item-has-children");
-            menuItems.forEach(item => {
-                const arrow = item.querySelector(".arrow");
-                if (arrow) {
-                    arrow.addEventListener("click", e => {
-                        e.stopPropagation();
-                        item.classList.toggle("open");
-                        menuItems.forEach(other => {
-                            if (other !== item) other.classList.remove("open");
-                        });
-                    });
-                }
-            });
-        });
-    </script>
+        <div class="comp-bloc-group bloc-2">
+          <div class="comp-bloc-header">
+            <span class="bloc-num">Bloc 2</span>
+            <span class="bloc-title">Conception et développement d'applications</span>
+          </div>
+          <div class="comp-bloc-items">
+            <div class="comp-item"><span class="comp-id">2.1</span><span>Conception et développement d'une solution applicative</span></div>
+          </div>
+        </div>
+        <div class="comp-bloc-group bloc-3">
+          <div class="comp-bloc-header">
+            <span class="bloc-num">Bloc 3</span>
+            <span class="bloc-title">Cybersécurité des services informatiques</span>
+          </div>
+          <div class="comp-bloc-items">
+            <div class="comp-item"><span class="comp-id">3.1</span><span>Protection des données à caractère personnel</span></div>
+            <div class="comp-item"><span class="comp-id">3.3</span><span>Sécurisation des équipements et des usages</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="project-card">
+    <div class="pc-meta">Stage 1ère année · 26 Mai — 27 Juin 2025</div>
+    <h3>Campus Connecté Comminges-Pyrénées</h3>
+    <div style="font-size:0.82rem;color:var(--ink3);margin-bottom:0.75rem">📍 Saint-Gaudens (31800) · Travail en équipe</div>
+    <p>Création d'une solution applicative complète de gestion des présences et des absences, prise de rendez-vous et inscription à des événements pour le Campus Connecté.</p>
+    <div class="tags">
+      <span class="tag accent">Développement web</span>
+      <span class="tag blue">Travail en équipe</span>
+      <span class="tag">Gestion de projet</span>
+    </div>
+    <button class="expand-btn" onclick="toggleDetail('campus')">› Détails</button>
+    <div class="detail-panel" id="dp-campus">
+      <h4>Missions réalisées</h4>
+      <ul>
+        <li>Création d'une application de gestion des étudiants - Interface administration.</li>
+        <li>Création d'une application de prise de rendez-vous, d'inscription à des ateliers - Interface étudiant.</li>
+        <li>Développement des fonctionnalités d'inscription à des événements, de prise de rendez-vous, de création d'étudiants, ...</li>
+        <li>Travail en équipe sur un même code source.</li>
+      </ul>
+      <h4 style="margin-top:0.85rem">Compétences mobilisées</h4>
+      <div class="comp-blocks">
+        <div class="comp-bloc-group bloc-1">
+          <div class="comp-bloc-header">
+            <span class="bloc-num">Bloc 1</span>
+            <span class="bloc-title">Support et mise à disposition des services</span>
+          </div>
+          <div class="comp-bloc-items">
+            <div class="comp-item"><span class="comp-id">1.1</span><span>Gestion du patrimoine informatique</span></div>
+            <div class="comp-item"><span class="comp-id">1.4</span><span>Travail en mode projet</span></div>
+            <div class="comp-item"><span class="comp-id">1.5</span><span>Mise à disposition d'un service aux utilisateurs</span></div>
+          </div>
+        </div>
+        <div class="comp-bloc-group bloc-2">
+          <div class="comp-bloc-header">
+            <span class="bloc-num">Bloc 2</span>
+            <span class="bloc-title">Conception et développement d'applications</span>
+          </div>
+          <div class="comp-bloc-items">
+            <div class="comp-item"><span class="comp-id">2.1</span><span>Conception et développement d'une solution applicative</span></div>
+            <div class="comp-item"><span class="comp-id">2.2</span><span>Maintenance corrective ou évolutive</span></div>
+            <div class="comp-item"><span class="comp-id">2.3</span><span>Gestion des données</span></div>
+          </div>
+        </div>
+        <div class="comp-bloc-group bloc-3">
+          <div class="comp-bloc-header">
+            <span class="bloc-num">Bloc 3</span>
+            <span class="bloc-title">Cybersécurité des services informatiques</span>
+          </div>
+          <div class="comp-bloc-items">
+            <div class="comp-item"><span class="comp-id">3.3</span><span>Sécurisation des équipements et des usages</span></div>
+            <div class="comp-item"><span class="comp-id">3.5</span><span>Cybersécurisation d'une solution applicative</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<div class="toast" id="toast"></div>
+<script>
+/* ── Theme ── */
+(function(){
+  const saved = localStorage.getItem('theme');
+  if(saved === 'dark' || (!saved && window.matchMedia('(prefers-color-scheme: dark)').matches)){
+    document.documentElement.setAttribute('data-theme','dark');
+  }
+})();
+
+function syncThemeButtons(){
+  const dark = document.documentElement.getAttribute('data-theme') === 'dark';
+  const tl = document.getElementById('topbar-theme-label');
+  const sl = document.getElementById('sidebar-theme-label');
+  if(tl){ tl.textContent = dark ? 'Sombre' : 'Clair'; }
+  if(sl){ sl.textContent = dark ? 'Mode clair' : 'Mode sombre'; }
+}
+
+function toggleTheme(){
+  const dark = document.documentElement.getAttribute('data-theme') === 'dark';
+  document.documentElement.setAttribute('data-theme', dark ? 'light' : 'dark');
+  localStorage.setItem('theme', dark ? 'light' : 'dark');
+  syncThemeButtons();
+}
+
+document.addEventListener('DOMContentLoaded', syncThemeButtons);
+
+/* ── Sidebar ── */
+function toggleSidebar(){
+  document.getElementById('sidebar').classList.toggle('open');
+  document.getElementById('overlay').classList.toggle('open');
+}
+document.getElementById('overlay').addEventListener('click',()=>{
+  document.getElementById('sidebar').classList.remove('open');
+  document.getElementById('overlay').classList.remove('open');
+});
+
+/* ── Toast / copy ── */
+function showToast(msg){
+  const t=document.getElementById('toast');
+  t.textContent=msg; t.classList.add('show');
+  setTimeout(()=>t.classList.remove('show'),2200);
+}
+function copyText(e,text){
+  e.preventDefault(); e.stopPropagation();
+  navigator.clipboard.writeText(text).then(()=>showToast('✓ Copié !'));
+}
+function toggleDetail(id){
+  const el=document.getElementById('dp-'+id);
+  const btn=el.previousElementSibling;
+  el.classList.toggle('open');
+  btn.innerHTML=el.classList.contains('open')?'✕ Fermer':'› Détails';
+}
+</script>
 </body>
 </html>

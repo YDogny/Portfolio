@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"/>
+  <link rel="icon" type="image/png" href="../image/Logo_YD.png"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact</title>
+  <link rel="stylesheet" href="../style.css"/>
+
+</head>
+<body>
+
+<!-- TOPBAR -->
+<header class="topbar">
+  <button class="sidebar-toggle" onclick="toggleSidebar()" aria-label="Menu">☰</button>
+  <a href="../index.html" class="topbar-brand"><img src="../image/Logo_YD.png" alt="YD" style="height:28px;width:28px;border-radius:50%;object-fit:cover;margin-right:7px;vertical-align:middle;flex-shrink:0"/>Yann <span>Dogny</span></a>
+    <ul class="topbar-nav">
+    <li><a href="../index.html" class="">Accueil</a></li>
+    <li><a href="cv.html" class="">CV</a></li>
+    <li><a href="competences.html" class="">Compétences</a></li>
+    <li><a href="projets.html" class="">Projets</a></li>
+    <li><a href="stages.html" class="">Stages</a></li>
+    <li><a href="veille.html" class="">Veille</a></li>
+    <li><a href="glpi.html" class="">GLPI</a></li>
+    <li><a href="contact.html" class="active">Contact</a></li>
+  <button class="theme-toggle" onclick="toggleTheme()" id="topbar-theme-btn" aria-label="Changer le thème">
+    <span class="toggle-label" id="topbar-theme-label">Clair</span>
+  </button>
+  </ul>
+</header>
+
+<!-- SIDEBAR OVERLAY -->
+<div class="sidebar-overlay" id="overlay"></div>
+
+<!-- SIDEBAR DRAWER -->
+<nav class="sidebar" id="sidebar">
+  <div style="display:flex;align-items:center;gap:9px;padding:0.75rem 0.75rem 0.65rem;border-bottom:1px solid var(--border);margin-bottom:0.5rem"><img src="../image/Logo_YD.png" alt="YD" style="height:34px;width:34px;border-radius:50%;object-fit:cover;flex-shrink:0"/><div><div style="font-size:0.875rem;font-weight:700;color:var(--ink);line-height:1.2">Yann Dogny</div><div style="font-size:0.68rem;color:var(--ink3)">BTS SIO SLAM</div></div></div>
+    <div class="sidebar-section-label">Navigation</div>
+  <a href="../index.html" class="nav-link">Accueil</a>
+  <a href="cv.html" class="nav-link">CV</a>
+  <a href="competences.html" class="nav-link">Compétences</a>
+  <a href="projets.html" class="nav-link">Projets</a>
+  <a href="stages.html" class="nav-link">Stages</a>
+  <a href="veille.html" class="nav-link">Veille</a>
+  <a href="glpi.html" class="nav-link">GLPI</a>
+  <a href="contact.html" class="nav-link active">Contact</a>
+
+
+  <div class="sidebar-divider"></div>
+  <button class="sidebar-theme-toggle" onclick="toggleTheme()" id="sidebar-theme-btn" aria-label="Changer le thème">
+    <span id="sidebar-theme-label">Mode sombre</span>
+    <span class="tgl-track"><span class="tgl-thumb"></span></span>
+  </button>
+
+</nav>
+
+<!-- MAIN -->
+<main class="main">
+
+  <div class="page-header">
+    <div class="breadcrumb">~/portfolio / <span>contact</span></div>
+    <h1>Contact</h1>
+    <p class="sub">Disponible pour stage, alternance ou projet — réponse sous 24h</p>
+  </div>
+
+  <div class="section-label">Canaux de communication</div>
+  <div class="contact-links">
+    <a href="mailto:yanndogny47@gmail.com" class="contact-link">
+      <div class="cl-icon">📧</div>
+      <div style="flex:1">
+        <div class="cl-label">Email · Canal principal</div>
+        <div class="cl-value">yanndogny47@gmail.com</div>
+      </div>
+      <button style="background:none;border:1px solid var(--border);border-radius:6px;padding:0.3rem 0.7rem;font-size:0.75rem;font-weight:500;color:var(--ink3);cursor:pointer;font-family:var(--sans);transition:all .15s" onclick="copyText(event,'yanndogny47@gmail.com')" onmouseover="this.style.borderColor='var(--accent)';this.style.color='var(--accent)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--ink3)'">Copier</button>
+    </a>
+    <a href="tel:0780429997" class="contact-link">
+      <div class="cl-icon">📞</div>
+      <div style="flex:1">
+        <div class="cl-label">Téléphone</div>
+        <div class="cl-value">07 80 42 99 97</div>
+      </div>
+      <button style="background:none;border:1px solid var(--border);border-radius:6px;padding:0.3rem 0.7rem;font-size:0.75rem;font-weight:500;color:var(--ink3);cursor:pointer;font-family:var(--sans);transition:all .15s" onclick="copyText(event,'0780429997')" onmouseover="this.style.borderColor='var(--accent)';this.style.color='var(--accent)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--ink3)'">Copier</button>
+    </a>
+    <div class="contact-link" style="cursor:default">
+      <div class="cl-icon">📍</div>
+      <div style="flex:1">
+        <div class="cl-label">Localisation</div>
+        <div class="cl-value">Bourran, 47320 — Nouvelle-Aquitaine</div>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<div class="toast" id="toast"></div>
+<script>
+/* ── Theme ── */
+(function(){
+  const saved = localStorage.getItem('theme');
+  if(saved === 'dark' || (!saved && window.matchMedia('(prefers-color-scheme: dark)').matches)){
+    document.documentElement.setAttribute('data-theme','dark');
+  }
+})();
+
+function syncThemeButtons(){
+  const dark = document.documentElement.getAttribute('data-theme') === 'dark';
+  const tl = document.getElementById('topbar-theme-label');
+  const sl = document.getElementById('sidebar-theme-label');
+  if(tl){ tl.textContent = dark ? 'Sombre' : 'Clair'; }
+  if(sl){ sl.textContent = dark ? 'Mode clair' : 'Mode sombre'; }
+}
+
+function toggleTheme(){
+  const dark = document.documentElement.getAttribute('data-theme') === 'dark';
+  document.documentElement.setAttribute('data-theme', dark ? 'light' : 'dark');
+  localStorage.setItem('theme', dark ? 'light' : 'dark');
+  syncThemeButtons();
+}
+
+document.addEventListener('DOMContentLoaded', syncThemeButtons);
+
+/* ── Sidebar ── */
+function toggleSidebar(){
+  document.getElementById('sidebar').classList.toggle('open');
+  document.getElementById('overlay').classList.toggle('open');
+}
+document.getElementById('overlay').addEventListener('click',()=>{
+  document.getElementById('sidebar').classList.remove('open');
+  document.getElementById('overlay').classList.remove('open');
+});
+
+/* ── Toast / copy ── */
+function showToast(msg){
+  const t=document.getElementById('toast');
+  t.textContent=msg; t.classList.add('show');
+  setTimeout(()=>t.classList.remove('show'),2200);
+}
+function copyText(e,text){
+  e.preventDefault(); e.stopPropagation();
+  navigator.clipboard.writeText(text).then(()=>showToast('✓ Copié !'));
+}
+function toggleDetail(id){
+  const el=document.getElementById('dp-'+id);
+  const btn=el.previousElementSibling;
+  el.classList.toggle('open');
+  btn.innerHTML=el.classList.contains('open')?'✕ Fermer':'› Détails';
+}
+</script>
+</body>
+</html>
