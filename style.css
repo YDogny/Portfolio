@@ -3,39 +3,39 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  /* ── Palette principale ── */
-  --bg:          #F5F7FA;
-  --bg2:         #FFFFFF;
-  --bg3:         #EEF1F7;
-  --border:      #DDE2EE;
-  --border2:     #B8C2DC;
+  /* ── Palette principale — clair chaud (crème & slate) ── */
+  --bg:          #F7F5F1;        /* fond crème très doux */
+  --bg2:         #FDFCFA;        /* cartes blanc cassé */
+  --bg3:         #EDEAE3;        /* fond alterné sable */
+  --border:      #DDD8CE;        /* bordures sable clair */
+  --border2:     #B8B0A2;        /* bordures plus marquées */
 
-  /* ── Texte ── */
-  --ink:         #1A1E2E;
-  --ink2:        #4A5068;
-  --ink3:        #8A90A8;
+  /* ── Texte — brun ardoise ── */
+  --ink:         #1E1C18;        /* quasi-noir chaud */
+  --ink2:        #514D44;        /* gris-brun */
+  --ink3:        #918C82;        /* gris sable */
 
-  /* ── Accent principal : bleu indigo ── */
-  --accent:      #3B5BDB;
-  --accent-bg:   #EEF2FF;
-  --accent2:     #1E40AF;
+  /* ── Accent principal : indigo teinté bordeaux ── */
+  --accent:      #4F46E5;        /* indigo vif */
+  --accent-bg:   #EEECFD;        /* fond accent très pâle mauve */
+  --accent2:     #3730A3;        /* indigo foncé */
 
-  /* ── Accent secondaire : violet ── */
+  /* ── Accent secondaire : violet prune ── */
   --purple:      #7C3AED;
-  --purple-bg:   #F3EEFF;
+  --purple-bg:   #F5F0FF;
 
-  /* ── Accent tertiaire : teal ── */
-  --teal:        #0E9488;
-  --teal-bg:     #ECFDF8;
+  /* ── Accent tertiaire : vert sauge ── */
+  --teal:        #0F766E;        /* teal légèrement plus foncé */
+  --teal-bg:     #F0FDF9;
 
   /* ── Blocs compétences ── */
-  --bloc1-bg:    #EEF2FF;  --bloc1-txt: #3B5BDB;
-  --bloc2-bg:    #ECFDF8;  --bloc2-txt: #0E9488;
+  --bloc1-bg:    #EEECFD;  --bloc1-txt: #4F46E5;
+  --bloc2-bg:    #F0FDF9;  --bloc2-txt: #0F766E;
   --bloc3-bg:    #FFF7ED;  --bloc3-txt: #C2410C;
 
   /* ── Tags ── */
-  --tag-bg:      #EEF1F7;
-  --tag-text:    #3B4468;
+  --tag-bg:      #EDEAE3;
+  --tag-text:    #3D3A30;
 
   /* ── Misc ── */
   --sidebar-w:   240px;
@@ -43,8 +43,8 @@
   --sans:        'Plus Jakarta Sans', system-ui, sans-serif;
   --serif:       'Lora', Georgia, serif;
   --radius:      10px;
-  --shadow:      0 1px 3px rgba(26,30,46,0.07), 0 4px 14px rgba(26,30,46,0.05);
-  --shadow-md:   0 4px 20px rgba(59,91,219,0.10);
+  --shadow:      0 1px 3px rgba(30,28,24,0.07), 0 4px 14px rgba(30,28,24,0.05);
+  --shadow-md:   0 4px 20px rgba(79,70,229,0.12);
 }
 
 html { scroll-behavior: smooth; }
@@ -535,40 +535,47 @@ summary::-webkit-details-marker { display:none; }
    ═══════════════════════════════════════════════════════════════ */
 
 [data-theme="dark"] {
-  --bg:          #0F1117;
-  --bg2:         #171B26;
-  --bg3:         #1E2333;
-  --border:      rgba(255,255,255,0.08);
-  --border2:     rgba(255,255,255,0.15);
+  /* ── Palette sombre — bleu marine profond teinté violet ── */
+  --bg:          #0D0F18;        /* fond marine très sombre */
+  --bg2:         #141624;        /* cartes bleu nuit */
+  --bg3:         #1A1D2E;        /* fond alterné légèrement plus clair */
+  --border:      rgba(180,185,220,0.09);   /* bordures bleutées subtiles */
+  --border2:     rgba(180,185,220,0.18);
 
-  --ink:         #E8EAF2;
-  --ink2:        #9BA3BF;
-  --ink3:        #5A6080;
+  /* ── Texte — bleu-blanc doux ── */
+  --ink:         #E2E4F0;        /* blanc teinté bleu */
+  --ink2:        #9198B8;        /* gris bleuté */
+  --ink3:        #525873;        /* gris-bleu foncé */
 
-  --accent:      #6B8EFF;
-  --accent-bg:   rgba(107,142,255,0.12);
-  --accent2:     #4A6FE8;
+  /* ── Accent principal : pervenche vive ── */
+  --accent:      #7B8FFF;        /* bleu-violet lumineux */
+  --accent-bg:   rgba(123,143,255,0.13);
+  --accent2:     #5B6FE8;
 
-  --purple:      #A78BFA;
-  --purple-bg:   rgba(167,139,250,0.12);
+  /* ── Accent secondaire : lavande ── */
+  --purple:      #B197FC;        /* violet plus doux */
+  --purple-bg:   rgba(177,151,252,0.12);
 
-  --teal:        #2DD4BF;
-  --teal-bg:     rgba(45,212,191,0.10);
+  /* ── Accent tertiaire : cyan menthe ── */
+  --teal:        #34D9C3;        /* cyan légèrement plus vif */
+  --teal-bg:     rgba(52,217,195,0.10);
 
-  --bloc1-bg:    rgba(107,142,255,0.10);  --bloc1-txt: #6B8EFF;
-  --bloc2-bg:    rgba(45,212,191,0.10);   --bloc2-txt: #2DD4BF;
-  --bloc3-bg:    rgba(251,146,60,0.10);   --bloc3-txt: #FB923C;
+  /* ── Blocs compétences ── */
+  --bloc1-bg:    rgba(123,143,255,0.11);  --bloc1-txt: #7B8FFF;
+  --bloc2-bg:    rgba(52,217,195,0.10);   --bloc2-txt: #34D9C3;
+  --bloc3-bg:    rgba(253,160,80,0.10);   --bloc3-txt: #FD9E4A;
 
-  --tag-bg:      rgba(255,255,255,0.07);
-  --tag-text:    #9BA3BF;
+  /* ── Tags ── */
+  --tag-bg:      rgba(180,185,220,0.08);
+  --tag-text:    #9198B8;
 
-  --shadow:      0 1px 3px rgba(0,0,0,0.3), 0 4px 14px rgba(0,0,0,0.2);
-  --shadow-md:   0 4px 20px rgba(107,142,255,0.15);
+  --shadow:      0 1px 4px rgba(0,0,0,0.4), 0 4px 16px rgba(0,0,0,0.25);
+  --shadow-md:   0 4px 24px rgba(123,143,255,0.18);
 }
 
 /* Topbar dark */
 [data-theme="dark"] .topbar {
-  background: rgba(23,27,38,0.95);
+  background: rgba(13,15,24,0.96);
   box-shadow: 0 1px 0 var(--border), 0 2px 12px rgba(0,0,0,0.3);
 }
 
