@@ -450,10 +450,82 @@ summary::-webkit-details-marker { display:none; }
 
 /* ───────────── RESPONSIVE ───────────── */
 @media (max-width:768px) {
+  /* ── Navigation ── */
   .topbar-nav { display:none; }
   .sidebar-toggle { display:flex; align-items:center; justify-content:center; }
-  .main { padding-left:1.25rem; padding-right:1.25rem; }
+
+  /* ── Topbar plus compacte ── */
+  .topbar { padding:0 0.85rem; gap:0.6rem; }
+  .topbar-brand { font-size:0.9rem; }
+
+  /* ── Contenu pleine largeur ── */
+  .main {
+    padding-left:0.85rem;
+    padding-right:0.85rem;
+    padding-top:calc(var(--topbar-h) + 1.25rem);
+    padding-bottom:2rem;
+    max-width:100%;
+  }
+
+  /* ── En-têtes de page ── */
+  .page-header h1 { font-size:1.75rem; }
+  .page-header { margin-bottom:1.5rem; }
+
+  /* ── Grilles → une colonne ── */
+  .skill-grid       { grid-template-columns:1fr; }
+  .source-grid      { grid-template-columns:1fr; }
+  .analysis-grid    { grid-template-columns:1fr; }
+  .projects-grid    { grid-template-columns:1fr; }
+  .lang-grid        { grid-template-columns:1fr; }
+  .ticket-grid      { grid-template-columns:1fr; }
+  .contact-grid     { grid-template-columns:1fr; }
+
+  /* ── Cards sans marge latérale excessive ── */
+  .project-card     { padding:1.1rem; }
+  .card             { padding:1.1rem; }
+  .skill-block      { padding:1rem; }
+  .source-card      { padding:1rem; }
+
+  /* ── Tableaux : scroll horizontal ── */
+  .histo-table-wrap { overflow-x:auto; -webkit-overflow-scrolling:touch; }
+  .histo-table      { min-width:520px; }
+
+  /* ── Timeline : une colonne ── */
+  .timeline { padding-left:1rem; }
+  .tl-item::before { left:-1rem; }
+
+  /* ── Blocs compétences ── */
+  .comp-bloc-items  { padding:0.5rem 0.65rem; }
+  .comp-bloc-header { padding:0.45rem 0.65rem; flex-wrap:wrap; }
+
+  /* ── Accordéons ── */
+  summary { padding:0.8rem 1rem; font-size:0.85rem; }
+  .details-body { padding:0.75rem 1rem; }
+  .details-body ul li { font-size:0.82rem; }
+
+  /* ── Info table ── */
+  .info-table .info-row { flex-direction:column; gap:0.2rem; padding:0.65rem 1rem; }
+  .info-table .lbl { min-width:unset; }
+
+  /* ── Tags ─  wrap plus serré ── */
+  .tags { gap:0.3rem; }
+  .tag  { font-size:0.7rem; padding:0.2rem 0.55rem; }
+
+  /* ── Contact links ── */
+  .contact-link { padding:0.85rem 1rem; }
+
+  /* ── Sidebar (drawer) pleine hauteur ── */
+  .sidebar { width:min(280px, 88vw); }
+
+  /* ── Méthode steps ── */
+  .method-step { padding:0.75rem 0.9rem; }
+
+  /* ── Axes de veille : empilés ── */
+  .card [style*="grid-template-columns:repeat(3"] {
+    grid-template-columns:1fr !important;
+  }
 }
+
 @media (min-width:769px) {
   .sidebar-toggle { display:flex; align-items:center; justify-content:center; }
 }
