@@ -4,7 +4,7 @@
   <meta charset="UTF-8"/>
   <link rel="icon" type="image/png" href="../image/Logo_YD.png"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Veille — Yann Dogny</title>
+  <title>Veille</title>
   <link rel="stylesheet" href="../style.css"/>
   <style>
     /* ── Tableau historique ── */
@@ -77,6 +77,51 @@
     .analysis-box.plus  ul li::before { content:'✓'; color:var(--teal); font-weight:700; flex-shrink:0; }
     .analysis-box.minus ul li::before { content:'✕'; color:#E24329; font-weight:700; flex-shrink:0; }
 
+
+    /* ── Glossaire ── */
+    .glossaire {
+      margin-top: 0.75rem;
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1rem 1.25rem;
+    }
+    .gloss-title {
+      font-size: 0.68rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--ink3);
+      margin-bottom: 0.75rem;
+    }
+    .gloss-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 0.45rem;
+    }
+    .gloss-item {
+      display: flex;
+      gap: 0.6rem;
+      font-size: 0.79rem;
+      color: var(--ink2);
+      line-height: 1.55;
+    }
+    .gloss-sym {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--accent);
+      min-width: 22px;
+      padding-top: 1px;
+      flex-shrink: 0;
+    }
+    .gloss-ref {
+      font-size: 0.65rem;
+      font-weight: 700;
+      color: var(--accent);
+      vertical-align: super;
+      line-height: 0;
+      margin-left: 1px;
+    }
     @media(max-width:600px){
       .analysis-grid { grid-template-columns:1fr; }
       .histo-table td:nth-child(4) { display:none; }
@@ -315,12 +360,10 @@
     <div class="analysis-box plus">
       <h4>Points positifs</h4>
       <ul>
-        <li>Automatisation des tâches répétitives (PR, tests, corrections) grâce aux agents IA</li>
-        <li>Meilleure sécurité intégrée : détection SAST, gestion des secrets, scan de dépendances</li>
+        <li>Automatisation des tâches répétitives (Pull Request, tests, corrections) grâce aux agents IA</li>
+        <li>Meilleure sécurité intégrée : détection SAST par IA, gestion des secrets, scan de dépendances</li>
         <li>Réduction des coûts CI/CD avec la baisse des tarifs GitHub Actions (-39 %)</li>
         <li>Flexibilité multi-modèles : choix entre GPT, Claude, Gemini selon le besoin</li>
-        <li>Support des infrastructures souveraines avec les modèles open source de GitLab</li>
-        <li>Centralisation de tout le cycle DevSecOps dans une seule plateforme</li>
       </ul>
     </div>
     <div class="analysis-box minus">
@@ -328,11 +371,21 @@
       <ul>
         <li>Risque de dépendance forte à un seul éditeur (vendor lock-in)</li>
         <li>Coût des fonctionnalités IA avancées (AI Credits) difficile à anticiper</li>
-        <li>Questions sur la confidentialité : le code source transite via des API externes</li>
-        <li>Compétences humaines en revue de code et debugging risquent de s'atrophier</li>
-        <li>Concurrence accrue (Cursor, Claude Code) qui pousse à une course aux fonctionnalités</li>
-        <li>Complexité croissante des plateformes nécessitant une montée en compétence continue</li>
+        <li>Confidentialité : le code source transite via des API externes</li>
+        <li>Atrophie possible des compétences humaines en revue de code et en débogage</li>
       </ul>
+    </div>
+  </div>
+
+  <!-- GLOSSAIRE -->
+  <div class="glossaire">
+    <div class="gloss-title">Définitions</div>
+    <div class="gloss-grid">
+      <div class="gloss-item"><span><strong>Agent IA</strong> — Programme capable d'exécuter des tâches en plusieurs étapes de façon autonome (créer une branche, écrire du code, lancer des tests) sans intervention à chaque étape.</span></div>
+      <div class="gloss-item"><span><strong>SAST (Static Application Security Testing)</strong> — Analyse automatique du code source à la recherche de failles de sécurité, sans avoir besoin d'exécuter le programme.</span></div>
+      <div class="gloss-item"><span><strong>CI/CD (Intégration / Déploiement Continus)</strong> — Pipeline automatique qui teste, valide et met en production le code à chaque modification, sans intervention manuelle.</span></div>
+      <div class="gloss-item"><span><strong>Vendor lock-in</strong> — Dépendance forte envers un seul fournisseur : si ses tarifs augmentent ou ses conditions changent, l'entreprise a du mal à migrer vers une autre solution.</span></div>
+      <div class="gloss-item"><span><strong>AI Credits</strong> — Unités de consommation facturées à l'usage pour les fonctionnalités IA avancées de GitHub Copilot (agent autonome, revue de code IA…).</span></div>
     </div>
   </div>
 
